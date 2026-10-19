@@ -1,0 +1,38 @@
+{
+  "name": "procedural-almanac",
+  "version": "0.2.0",
+  "description": "Procedural drawing and motion for the canvas, where every technique cites where it came from.",
+  "type": "module",
+  "exports": "./src/index.js",
+  "files": [
+    "src",
+    "almanac.json",
+    "references.json",
+    "CATALOG.md",
+    "gallery",
+    "CITATION.cff"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node tests/run.mjs",
+    "docs": "node tools/gallery.mjs && node tools/catalog.mjs",
+    "format": "prettier --write src tests tools almanac.json references.json package.json"
+  },
+  "keywords": [
+    "procedural",
+    "generative",
+    "creative-coding",
+    "canvas",
+    "animation",
+    "inverse-kinematics",
+    "gait"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@napi-rs/canvas": "^1.0.11",
+    "prettier": "^3.9.10"
+  }
+}

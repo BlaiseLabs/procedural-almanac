@@ -1,0 +1,1324 @@
+[
+  {
+    "id": "jenkins-integer-hashing",
+    "type": "webpage",
+    "title": "Integer Hashing",
+    "author": [
+      {
+        "family": "Jenkins",
+        "given": "Bob"
+      }
+    ],
+    "container-title": "burtleburtle.net",
+    "URL": "https://burtleburtle.net/bob/hash/integer.html",
+    "note": "the section \"4-byte integer hash, full avalanche\"",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "hash-function-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Hash function",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Hash_function",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "fnv-rfc9923",
+    "type": "report",
+    "title": "The FNV Non-Cryptographic Hash Algorithm",
+    "author": [
+      {
+        "family": "Noll",
+        "given": "L."
+      },
+      {
+        "family": "Vo",
+        "given": "K."
+      },
+      {
+        "family": "Eastlake",
+        "given": "D.",
+        "suffix": "3rd"
+      },
+      {
+        "family": "Hansen",
+        "given": "T."
+      }
+    ],
+    "issued": {
+      "date-parts": [[2026, 2]]
+    },
+    "publisher": "RFC Editor",
+    "collection-title": "Request for Comments",
+    "number": "9923",
+    "DOI": "10.17487/RFC9923",
+    "URL": "https://www.rfc-editor.org/info/rfc9923/"
+  },
+  {
+    "id": "fnv-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Fowler–Noll–Vo hash function",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "mulberry32",
+    "type": "software",
+    "title": "Mulberry32 PRNG",
+    "author": [
+      {
+        "family": "Ettinger",
+        "given": "Tommy"
+      }
+    ],
+    "issued": {
+      "date-parts": [[2017]]
+    },
+    "URL": "https://gist.github.com/tommyettinger/46a874533244883189143505d203312c",
+    "note": "public domain (CC0 1.0)",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "prng-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Pseudorandom number generator",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Pseudorandom_number_generator",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "inverse-kinematics-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Inverse kinematics",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Inverse_kinematics",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "law-of-cosines-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Law of cosines",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Law_of_cosines",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "gait-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Gait",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Gait",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "gait-analysis-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Gait analysis",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Gait_analysis",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "horse-gait-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Horse gait",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Horse_gait",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "tripod-gait-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Tripod gait",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Tripod_gait",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "muybridge-1887",
+    "type": "book",
+    "title": "Animal Locomotion: An Electro-photographic Investigation of Consecutive Phases of Animal Movements",
+    "author": [
+      {
+        "family": "Muybridge",
+        "given": "Eadweard"
+      }
+    ],
+    "issued": {
+      "date-parts": [[1887]]
+    },
+    "publisher": "J. B. Lippincott Company",
+    "publisher-place": "Philadelphia",
+    "URL": "https://en.wikipedia.org/wiki/Animal_Locomotion"
+  },
+  {
+    "id": "hildebrand-1965",
+    "type": "article-journal",
+    "title": "Symmetrical Gaits of Horses",
+    "author": [
+      {
+        "family": "Hildebrand",
+        "given": "Milton"
+      }
+    ],
+    "issued": {
+      "date-parts": [[1965, 11, 5]]
+    },
+    "container-title": "Science",
+    "volume": "150",
+    "issue": "3697",
+    "page": "701-708",
+    "DOI": "10.1126/science.150.3697.701"
+  },
+  {
+    "id": "wilson-1966",
+    "type": "article-journal",
+    "title": "Insect Walking",
+    "author": [
+      {
+        "family": "Wilson",
+        "given": "Donald M."
+      }
+    ],
+    "issued": {
+      "date-parts": [[1966]]
+    },
+    "container-title": "Annual Review of Entomology",
+    "volume": "11",
+    "page": "103-122",
+    "DOI": "10.1146/annurev.en.11.010166.000535"
+  },
+  {
+    "id": "modulo-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Modulo",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Modulo",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "web-colors-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Web colors",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Web_colors",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "tints-and-shades-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Tints and shades",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Tints_and_shades",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "color-grading-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Color grading",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Color_grading",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "aerial-perspective-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Aerial perspective",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Aerial_perspective",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "bt601-itu",
+    "type": "standard",
+    "title": "Studio encoding parameters of digital television for standard 4:3 and wide-screen 16:9 aspect ratios",
+    "author": [
+      {
+        "literal": "ITU-R"
+      }
+    ],
+    "number": "Recommendation ITU-R BT.601-7",
+    "issued": {
+      "date-parts": [[2011, 3, 8]]
+    },
+    "publisher": "International Telecommunication Union",
+    "publisher-place": "Geneva",
+    "URL": "https://www.itu.int/rec/R-REC-BT.601",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    },
+    "note": "Version BT.601-7 (03/2011), in force; earlier versions date from 1982."
+  },
+  {
+    "id": "clamping-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Clamp (function)",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Clamp_(function)",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "cook-1986",
+    "type": "article-journal",
+    "title": "Stochastic sampling in computer graphics",
+    "author": [
+      {
+        "family": "Cook",
+        "given": "Robert L."
+      }
+    ],
+    "issued": {
+      "date-parts": [[1986, 1]]
+    },
+    "container-title": "ACM Transactions on Graphics",
+    "volume": "5",
+    "issue": "1",
+    "page": "51-72",
+    "DOI": "10.1145/7529.8927"
+  },
+  {
+    "id": "fbm-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Fractional Brownian motion",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Fractional_Brownian_motion",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "heightmap-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Heightmap",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Heightmap",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "hsl-hsv-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "HSL and HSV",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/HSL_and_HSV",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "isometric-graphics-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Isometric video game graphics",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Isometric_video_game_graphics",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "isometric-projection-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Isometric projection",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Isometric_projection",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "keyframe-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Key frame",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Key_frame",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "lambertian-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Lambertian reflectance",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Lambertian_reflectance",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "lerp-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Linear interpolation",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Linear_interpolation",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "luma-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Luma (video)",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Luma_(video)",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "mandelbrot-van-ness-1968",
+    "type": "article-journal",
+    "title": "Fractional Brownian Motions, Fractional Noises and Applications",
+    "author": [
+      {
+        "family": "Mandelbrot",
+        "given": "Benoit B."
+      },
+      {
+        "family": "Van Ness",
+        "given": "John W."
+      }
+    ],
+    "issued": {
+      "date-parts": [[1968, 10]]
+    },
+    "container-title": "SIAM Review",
+    "volume": "10",
+    "issue": "4",
+    "page": "422-437",
+    "publisher": "Society for Industrial & Applied Mathematics (SIAM)",
+    "DOI": "10.1137/1010093",
+    "URL": "https://doi.org/10.1137/1010093",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "painters-algorithm-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Painter's algorithm",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Painter%27s_algorithm",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "parallax-scrolling-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Parallax scrolling",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Parallax_scrolling",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "redblob-terrain-from-noise",
+    "type": "webpage",
+    "title": "Making maps with noise functions",
+    "author": [
+      {
+        "family": "Patel",
+        "given": "Amit J."
+      }
+    ],
+    "issued": {
+      "date-parts": [[2015, 7, 7]]
+    },
+    "container-title": "Red Blob Games",
+    "URL": "https://www.redblobgames.com/maps/terrain-from-noise/",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    },
+    "note": "Updated in 2016, 2017, 2018, 2019, 2020 and 2022."
+  },
+  {
+    "id": "scintillation-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Twinkling",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Twinkling",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "smith-1978",
+    "type": "article-journal",
+    "title": "Color gamut transform pairs",
+    "author": [
+      {
+        "family": "Smith",
+        "given": "Alvy Ray"
+      }
+    ],
+    "issued": {
+      "date-parts": [[1978, 8, 23]]
+    },
+    "container-title": "ACM SIGGRAPH Computer Graphics",
+    "volume": "12",
+    "issue": "3",
+    "page": "12-19",
+    "publisher": "Association for Computing Machinery (ACM)",
+    "DOI": "10.1145/965139.807361",
+    "URL": "https://doi.org/10.1145/965139.807361",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "smoothstep-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Smoothstep",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Smoothstep",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "texturing-and-modeling-2003",
+    "type": "book",
+    "title": "Texturing and Modeling: A Procedural Approach",
+    "author": [
+      {
+        "family": "Ebert",
+        "given": "David S."
+      },
+      {
+        "family": "Musgrave",
+        "given": "F. Kenton"
+      },
+      {
+        "family": "Peachey",
+        "given": "Darwyn"
+      },
+      {
+        "family": "Perlin",
+        "given": "Ken"
+      },
+      {
+        "family": "Worley",
+        "given": "Steven"
+      }
+    ],
+    "edition": "3",
+    "issued": {
+      "date-parts": [[2003]]
+    },
+    "publisher": "Morgan Kaufmann",
+    "ISBN": "978-1-55860-848-1",
+    "URL": "https://shop.elsevier.com/books/texturing-and-modeling/ebert/978-1-55860-848-1",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "value-noise-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Value noise",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Value_noise",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "boids-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Boids",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Boids",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "particle-system-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Particle system",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Particle_system",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "random-walk-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Random walk",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Random_walk",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "reeves-1983",
+    "type": "article-journal",
+    "title": "Particle Systems—a Technique for Modeling a Class of Fuzzy Objects",
+    "author": [
+      {
+        "family": "Reeves",
+        "given": "W. T."
+      }
+    ],
+    "issued": {
+      "date-parts": [[1983, 4]]
+    },
+    "container-title": "ACM Transactions on Graphics",
+    "volume": "2",
+    "issue": "2",
+    "page": "91-108",
+    "publisher": "Association for Computing Machinery (ACM)",
+    "DOI": "10.1145/357318.357320",
+    "URL": "https://doi.org/10.1145/357318.357320",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "reynolds-1987",
+    "type": "article-journal",
+    "title": "Flocks, herds and schools: A distributed behavioral model",
+    "author": [
+      {
+        "family": "Reynolds",
+        "given": "Craig W."
+      }
+    ],
+    "issued": {
+      "date-parts": [[1987, 8]]
+    },
+    "container-title": "ACM SIGGRAPH Computer Graphics",
+    "volume": "21",
+    "issue": "4",
+    "page": "25-34",
+    "publisher": "Association for Computing Machinery (ACM)",
+    "DOI": "10.1145/37402.37406",
+    "URL": "https://doi.org/10.1145/37402.37406",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "reynolds-1999",
+    "type": "paper-conference",
+    "title": "Steering Behaviors For Autonomous Characters",
+    "author": [
+      {
+        "family": "Reynolds",
+        "given": "Craig W."
+      }
+    ],
+    "issued": {
+      "date-parts": [[1999, 3]]
+    },
+    "container-title": "Proceedings of Game Developers Conference 1999",
+    "event-title": "Game Developers Conference 1999",
+    "event-place": "San Jose, California",
+    "publisher": "Miller Freeman Game Group",
+    "publisher-place": "San Francisco, California",
+    "page": "763-782",
+    "URL": "https://www.red3d.com/cwr/steer/gdc99/",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "wraparound-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Wraparound (video games)",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Wraparound_(video_games)",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "abop-1990",
+    "type": "book",
+    "title": "The Algorithmic Beauty of Plants",
+    "author": [
+      {
+        "family": "Prusinkiewicz",
+        "given": "Przemyslaw"
+      },
+      {
+        "family": "Lindenmayer",
+        "given": "Aristid"
+      }
+    ],
+    "collection-title": "The Virtual Laboratory",
+    "issued": {
+      "date-parts": [[1990]]
+    },
+    "publisher": "Springer New York",
+    "publisher-place": "New York, NY",
+    "DOI": "10.1007/978-1-4613-8476-2",
+    "URL": "https://algorithmicbotany.org/papers/abop/abop.pdf",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    },
+    "note": "Free electronic edition produced by the authors' group from the original LaTeX files."
+  },
+  {
+    "id": "fractal-canopy-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Fractal canopy",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Fractal_canopy",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "forward-kinematics-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Forward kinematics",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Forward_kinematics",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "cel-shading-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Cel shading",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Cel_shading",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "color-temperature-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Color temperature",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Color_temperature",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "crepuscular-rays-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Crepuscular rays",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Crepuscular_rays",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "film-grain-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Film grain",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Film_grain",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "hatching-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Hatching",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Hatching",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "reflection-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Reflection (computer graphics)",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Reflection_(computer_graphics)",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "sprite-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Sprite (computer graphics)",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Sprite_(computer_graphics)",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "vignetting-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Vignetting",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Vignetting",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "display-list-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Display list",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Display_list",
+    "accessed": {
+      "date-parts": [[2026, 10, 17]]
+    }
+  },
+  {
+    "id": "crossover-evolutionary-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Crossover (evolutionary algorithm)",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Crossover_(evolutionary_algorithm)",
+    "accessed": {
+      "date-parts": [[2026, 10, 18]]
+    }
+  },
+  {
+    "id": "mutation-evolutionary-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Mutation (evolutionary algorithm)",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Mutation_(evolutionary_algorithm)",
+    "accessed": {
+      "date-parts": [[2026, 10, 18]]
+    }
+  },
+  {
+    "id": "ordered-dithering-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Ordered dithering",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Ordered_dithering",
+    "note": "the Bayer matrices, after Bayer (1973), \"An optimum method for two-level rendition of continuous-tone pictures\"",
+    "accessed": {
+      "date-parts": [[2026, 10, 18]]
+    }
+  },
+  {
+    "id": "probit-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Probit",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Probit",
+    "note": "the quantile function of the standard normal distribution",
+    "accessed": {
+      "date-parts": [[2026, 10, 18]]
+    }
+  },
+  {
+    "id": "lcg-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Linear congruential generator",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Linear_congruential_generator",
+    "note": "the table of parameters in common use: Numerical Recipes' a = 1664525, c = 1013904223, m = 2^32",
+    "accessed": {
+      "date-parts": [[2026, 10, 18]]
+    }
+  },
+  {
+    "id": "imagedata-mdn",
+    "type": "webpage",
+    "title": "ImageData",
+    "container-title": "MDN Web Docs",
+    "URL": "https://developer.mozilla.org/en-US/docs/Web/API/ImageData",
+    "note": "its data: one byte each of red, green, blue and alpha, pixel by pixel",
+    "accessed": {
+      "date-parts": [[2026, 10, 18]]
+    }
+  },
+  {
+    "id": "endianness-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Endianness",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Endianness",
+    "note": "little-endian: the lowest byte first, so four bytes r, g, b, a read as one 32-bit number 0xAABBGGRR",
+    "accessed": {
+      "date-parts": [[2026, 10, 18]]
+    }
+  },
+  {
+    "id": "slynyrd-pixelblog-1",
+    "type": "post-weblog",
+    "title": "Pixelblog - 1 - Color Palettes",
+    "author": [
+      {
+        "literal": "Slynyrd (Raymond Schlitter)"
+      }
+    ],
+    "container-title": "Slynyrd",
+    "issued": {
+      "date-parts": [[2018, 1, 10]]
+    },
+    "URL": "https://www.slynyrd.com/blog/2018/1/10/pixelblog-1-color-palettes",
+    "note": "hue shift along a ramp: warmer as it brightens, cooler as it darkens",
+    "accessed": {
+      "date-parts": [[2026, 10, 18]]
+    }
+  },
+  {
+    "id": "ellipse-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Ellipse",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Ellipse",
+    "note": "its equation (x/a)^2 + (y/b)^2 = 1, solved for the half-width at a height",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "scanline-rendering-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Scanline rendering",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Scanline_rendering",
+    "note": "a shape filled a row at a time, each row the runs between its edges",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "stadium-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Stadium (geometry)",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Stadium_(geometry)",
+    "note": "a capsule: the points within a distance of a line segment",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "bresenham-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Bresenham's line algorithm",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm",
+    "note": "the line's cells chosen with an error term in whole numbers, in every octant",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "even-odd-rule-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Even-odd rule",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Even%E2%80%93odd_rule",
+    "note": "inside where a ray crosses the edges an odd number of times",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "blend-modes-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Blend modes",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Blend_modes",
+    "note": "multiply: each channel scaled, which darkens",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "bit-blit-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Bit blit",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Bit_blit",
+    "note": "a block of pixels copied onto another, with a mask for the see-through ones",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "shear-mapping-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Shear mapping",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Shear_mapping",
+    "note": "each row moved sideways in proportion to its height",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "dilation-morphology-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Dilation (morphology)",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Dilation_(morphology)",
+    "note": "a shape grown by a structuring element; the grown shape less the shape is its outline",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "pixel-art-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Pixel art",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Pixel_art",
+    "note": "pictures edited a pixel at a time: outlines, limited palettes, hand-placed shading",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "minimum-bounding-box-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Minimum bounding box",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Minimum_bounding_box",
+    "note": "the smallest axis-aligned box holding a set of points",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "indexed-color-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Indexed color",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Indexed_color",
+    "note": "each pixel a key into a palette of colours",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "texture-atlas-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Texture atlas",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Texture_atlas",
+    "note": "many small images packed into one sheet (a sprite sheet)",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "voronoi-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Voronoi diagram",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Voronoi_diagram",
+    "note": "every point given to the nearest of a set of sites",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "procedural-animation-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Procedural animation",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Procedural_animation",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "harmonic-oscillator-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Harmonic oscillator",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Harmonic_oscillator",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    },
+    "note": "the damped harmonic oscillator"
+  },
+  {
+    "id": "semi-implicit-euler-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Semi-implicit Euler method",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Semi-implicit_Euler_method",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "median-filter-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Median filter",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Median_filter",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    },
+    "note": "a pixel set from its neighbours, to remove specks"
+  },
+  {
+    "id": "chord-geometry-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Chord (geometry)",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Chord_(geometry)",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "buoyancy-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Buoyancy",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Buoyancy",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "distance-transform-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Distance transform",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Distance_transform",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "borgefors-1986",
+    "type": "article-journal",
+    "title": "Distance transformations in digital images",
+    "author": [
+      {
+        "family": "Borgefors",
+        "given": "Gunilla"
+      }
+    ],
+    "container-title": "Computer Vision, Graphics, and Image Processing",
+    "volume": "34",
+    "issue": "3",
+    "page": "344-371",
+    "issued": {
+      "date-parts": [[1986, 6]]
+    },
+    "DOI": "10.1016/S0734-189X(86)80047-0"
+  },
+  {
+    "id": "bilinear-interpolation-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Bilinear interpolation",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Bilinear_interpolation",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "lookup-table-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Lookup table",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Lookup_table",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "rotation-matrix-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Rotation matrix",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Rotation_matrix",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "a-star-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "A* search algorithm",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/A*_search_algorithm",
+    "note": "best-first search guided by a guess of the distance left that never overestimates it, after Hart, Nilsson and Raphael (1968)",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "any-angle-path-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Any-angle path planning",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Any-angle_path_planning",
+    "note": "paths not held to the grid's directions: a grid path straightened where a line of sight allows",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "flood-fill-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Flood fill",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Flood_fill",
+    "note": "every node joined to a start, with a stack",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "least-fixed-point-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Least fixed point",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Least_fixed_point",
+    "note": "the smallest set a rule leaves unchanged, reached by applying the rule until nothing changes",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "hip-roof-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Hip roof",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Hip_roof",
+    "note": "a roof sloping down on every side, its ends included",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "gable-roof-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Gable roof",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Gable_roof",
+    "note": "two slopes meeting at a ridge, the ends upright",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "eaves-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Eaves",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Eaves",
+    "note": "the roof's edge reaching past the wall",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "roof-tiles-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Roof tiles",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Roof_tiles",
+    "note": "overlapping tiles laid in courses, each course over the joints of the one below",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "thatching-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Thatching",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Thatching",
+    "note": "straw or reed laid in layers, each over the one below",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "oblique-projection-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Oblique projection",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Oblique_projection",
+    "note": "a parallel projection whose depth is drawn sheared across: one face true, depth receding at an angle",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "normal-mapping-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Normal mapping",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Normal_mapping",
+    "note": "a surface's facing stored per texel and used in lighting",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "quantization-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Quantization (signal processing)",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Quantization_(signal_processing)",
+    "note": "a continuous value mapped to whole steps",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  },
+  {
+    "id": "masonry-wikipedia",
+    "type": "entry-encyclopedia",
+    "title": "Masonry",
+    "container-title": "Wikipedia",
+    "URL": "https://en.wikipedia.org/wiki/Masonry",
+    "note": "blocks laid in courses with mortar, the joints of each course set off from the one below",
+    "accessed": {
+      "date-parts": [[2026, 10, 19]]
+    }
+  }
+]

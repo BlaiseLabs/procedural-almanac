@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this almanac, please cite it as below."
+title: "procedural-almanac"
+abstract: "Procedural drawing and motion for the canvas, where every technique cites where it came from."
+type: software
+authors:
+  - name: "Blaiselabs"
+version: 0.2.0
+date-released: 2026-10-17
+license: MIT
+keywords:
+  - procedural generation
+  - creative coding
+  - animation
+  - inverse kinematics
+  - gait
