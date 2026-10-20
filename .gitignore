@@ -1,1 +1,6 @@
 node_modules/
+
+# what examples make besides what the README shows (examples/island/island.mjs writes its film beside itself; the GIF
+# is kept, for the README)
+examples/**/*.mp4
+examples/**/poster.png

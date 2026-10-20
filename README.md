@@ -1,32 +1,47 @@
 # procedural-almanac
 
-Procedural drawing and motion for the canvas: walk cycles, flocks, noise-made land, light and projection, where every
-technique cites where it came from.
+Procedural drawing and motion for the canvas and for pixel art: walk cycles, flocks, noise-made land, water,
+weather, light and projection, ways across a grid, where every technique cites where it came from.
 
-Version 0.2 holds 72 techniques, 36 established and 36 original, citing 60 sources and held by 150 checks. The full
+![An island drawn with nothing but the almanac: noise becomes terraces, the sea comes in, a river, a forest, villages
+and roads appear, then a day, a night and a storm](examples/island/island.gif)
+
+The island above is made with the almanac alone: [one script](examples/island/island.mjs) calls 85 of its functions,
+with no sprites or image files, and each caption names the functions on screen.
+
+The almanac holds 162 techniques, 77 established and 85 original, citing 106 sources and held by 267 checks. The full
 list, with every source and every test, is the [catalog](CATALOG.md).
 
-| module                   | techniques                                                                                                                        |
-| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
-| `numbers`                | clamp, lerp, smoothstep, wrap, angleDiff                                                                                          |
-| `random`                 | hash32, fnv1a, hashString, indexRandom, SeededRandom, latticeHash, linearCongruential                                             |
-| `noise`                  | latticeRandom, valueNoise, fractalNoise, ridgedNoise, noiseLine, noiseTile                                                        |
-| `colour`                 | hexToRgb, rgbToHex, rgba, mixColour, shade, luma, rgbToHsl, hslToRgb, hueToward, gradeColour                                      |
-| `pixels`                 | packRgb, mixPacked, packedHsl, packedToHsl, hueShiftTone, bayerThreshold, ditheredBorder                                          |
-| `light`                  | dayCycle, aerialPerspective, twinkle                                                                                              |
-| `water`                  | waterTime, waterPixel                                                                                                             |
-| `land`                   | hillLine, islandHeight, levelCut, heightWater, wanderingHeading                                                                   |
-| `scatter`                | scatterAlong, windowLit, blink                                                                                                    |
-| `projection`             | parallax, turnedProjection, turnedDepth, faceShade                                                                                |
-| `limbs`, `gait`, `genes` | twoBoneLimb; footStep, strideRate, gaitTiming; genomeFrom, crossGenomes                                                           |
-| `motion`                 | flockStep, gridWalk, pulseRise                                                                                                    |
-| `particles`              | particleField, fall, rise, hover, wrapAround                                                                                      |
-| `growth`                 | branchingTree, swayingChain                                                                                                       |
-| `drawing`                | partPath, fillInArt, drawRecipe, grain, vignette, glowSprite, glowingDisc, lightRays, fogBands, mirrorBelow, puffCloud, inkedLine |
-| `parts`                  | tones, drawParts, tracePart                                                                                                       |
-| `display`                | drawList                                                                                                                          |
-| `canvas`                 | setCanvasMaker, makeCanvas, stampCache                                                                                            |
-| `seeds`                  | seedOf, seedWords                                                                                                                 |
+| module       | techniques                                                                                                                                                                                                                             |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `numbers`    | clamp, lerp, smoothstep, wrap, angleDiff                                                                                                                                                                                               |
+| `random`     | hash32, fnv1a, hashString, indexRandom, SeededRandom, latticeHash, linearCongruential                                                                                                                                                  |
+| `noise`      | latticeRandom, valueNoise, fractalNoise, ridgedNoise, noiseLine, noiseTile                                                                                                                                                             |
+| `pixels`     | packRgb, mixPacked, packedHsl, packedToHsl, hueShiftTone, bayerThreshold, ditheredBorder, scalePacked                                                                                                                                  |
+| `water`      | waterTime, waterPixel                                                                                                                                                                                                                  |
+| `colour`     | hexToRgb, rgbToHex, rgba, mixColour, shade, luma, rgbToHsl, hslToRgb, hueToward, gradeColour                                                                                                                                           |
+| `light`      | dayCycle, aerialPerspective, twinkle, hourLight, hourTables, gradeFrame                                                                                                                                                                |
+| `land`       | hillLine, islandHeight, levelCut, heightWater, wanderingHeading, chamferDistance, wobbledRing, mountainRise, windingRiver, plotGrid                                                                                                    |
+| `scatter`    | scatterAlong, windowLit, blink                                                                                                                                                                                                         |
+| `projection` | parallax, turnedProjection, turnedDepth, faceShade, obliqueShear, obliqueToScreen, obliqueToGround                                                                                                                                     |
+| `motion`     | flockStep, gridWalk, pulseRise, fleeVector, formationSlot                                                                                                                                                                              |
+| `particles`  | particleField, fall, rise, hover, wrapAround                                                                                                                                                                                           |
+| `growth`     | branchingTree, swayingChain                                                                                                                                                                                                            |
+| `canvas`     | setCanvasMaker, makeCanvas, stampCache                                                                                                                                                                                                 |
+| `drawing`    | partPath, fillInArt, drawRecipe, grain, vignette, glowSprite, glowingDisc, lightRays, fogBands, mirrorBelow, puffCloud, inkedLine                                                                                                      |
+| `parts`      | tones, drawParts, tracePart, partOutline                                                                                                                                                                                               |
+| `display`    | drawList                                                                                                                                                                                                                               |
+| `limbs`      | twoBoneLimb, twoBoneLimb3d                                                                                                                                                                                                             |
+| `gait`       | footStep, strideRate, gaitTiming                                                                                                                                                                                                       |
+| `genes`      | genomeFrom, crossGenomes                                                                                                                                                                                                               |
+| `seeds`      | seedOf, seedWords                                                                                                                                                                                                                      |
+| `raster`     | ellipseRows, fillEllipse, capsuleSteps, lineCells, polygonRows, ditherEllipse, shadeEllipse, blitSprite, blitSway, outlinePass, cutSprite, drawnBounds                                                                                 |
+| `sprites`    | outlineSprite, spriteFromRows, layTemplate, fillBetweenEdges, gridPixels, packSheet, leafCrown, barkTrunk                                                                                                                              |
+| `bodies`     | followJoint, dampedSpring, footSwing, footReady, floatHeight, waterlineCut, depthUnderCut, despeckle, staggeredScales, topEdgeShine, furTufts, rimDetail, smoothCurve, bodySpots, bodyPattern, coatColours, resampleList, blendRecords |
+| `weather`    | cloudShadows, fogBanks, frontStrength, lightningFlash                                                                                                                                                                                  |
+| `paths`      | gridAStar, nearestFreeCell, segmentClear, straightenPath, floodFill, untilSettled                                                                                                                                                      |
+| `roofs`      | roofPlan, slopeShade, roofTexel                                                                                                                                                                                                        |
+| `relief`     | terraceLevel, wallShade, leafShade, crownRows, silhouetteNormals, crownClumps                                                                                                                                                          |
 
 ## What it is
 
@@ -53,7 +68,7 @@ one telling you where to read the math if you want to.
 
 ## What it is not
 
-Not a game engine, not physics, not 3D or WebGL, and not a framework that owns your render loop. These are functions
+Not a game engine, not physics, not a 3D renderer, and not a framework that owns your render loop. These are functions
 you call, with your own canvas, at your own pace.
 
 ## Use it
@@ -88,6 +103,19 @@ In a browser without a bundler, one line of import map tells it where the almana
 </script>
 ```
 
+## Examples
+
+[`examples/island/island.mjs`](examples/island/island.mjs) makes the film at the top of this page. A seed's noise
+becomes a terraced island, the sea comes in, a river runs down, a forest grows, villages and roads appear, and the
+island lives through a day, a night and a storm. It uses only the almanac and Node's own modules, and it counts the
+techniques it calls as it goes.
+
+```sh
+node examples/island/island.mjs                         # island.gif and island.mp4 beside the script (needs ffmpeg)
+node examples/island/island.mjs --still 11 frame.png    # one frame, at 11 seconds
+node examples/island/island.mjs --seed amber-vale-7     # another island
+```
+
 ## How it is organised
 
 | file                     | what it holds                                                                                                                                                        |
@@ -98,6 +126,7 @@ In a browser without a bundler, one line of import map tells it where the almana
 | `tests/checks/`          | every check, one sentence each, the same sentences the entries list, a file per module; the drawing checks read real pixels (@napi-rs/canvas, a dev dependency only) |
 | `tests/run.mjs`          | `npm test`: the checks, then the almanac held to itself (below)                                                                                                      |
 | `CATALOG.md`, `gallery/` | written from the above by `npm run docs`                                                                                                                             |
+| `examples/`              | scripts that use only the almanac; `examples/island` makes the film at the top of this page                                                                          |
 
 `npm test` fails when any of these is true:
 
