@@ -2,7 +2,9 @@
 
 *Written from [almanac.json](almanac.json) and [references.json](references.json) by `npm run docs`: edit those, not this.*
 
-Each entry is one function or class. **Established techniques** are someone else’s work, and cite it: an *intro* to start from (often an encyclopedia article) and the *source* it comes from (a paper, a book, a standard, published code). **Originals** are this almanac’s own, and since there is nothing to cite, they explain themselves: what they are for, what inspired them, what they build on, and how they work in plain words. Every entry lists its tests, each one a sentence saying what it checks; the test run fails if a sentence here is not a real check.
+Each entry documents a single function or class. Established techniques include references to the original work, with an intro for accessible background reading (often an encyclopedia article) and a source pointing to a paper, book, standard, or published implementation. Original techniques are developed specifically for this almanac. Rather than citing an external source, their entries explain what they do, what inspired them, which ideas they build on, and how they work in plain language.
+
+Every entry also lists its tests, with a short description of what each test verifies. These descriptions are checked against the actual test suite, so the tests fail if a documented check doesn't exist.
 
 | entry | kind | what it does |
 |---|---|---|

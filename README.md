@@ -6,8 +6,9 @@ weather, light and projection, ways across a grid, where every technique cites w
 ![An island drawn with nothing but the almanac: noise becomes terraces, the sea comes in, a river, a forest, villages
 and roads appear, then a day, a night and a storm](examples/island/island.gif)
 
-The island above is made with the almanac alone: [one script](examples/island/island.mjs) calls 85 of its functions,
+The island above is made with the almanac alone: [one scene](examples/island/scene.js) calls 85 of its functions,
 with no sprites or image files, and each caption names the functions on screen.
+**[Run it in your browser](https://blaiselabs.github.io/procedural-almanac/examples/island/)**, with a seed of your own.
 
 The almanac holds 162 techniques, 77 established and 85 original, citing 106 sources and held by 267 checks. The full
 list, with every source and every test, is the [catalog](CATALOG.md).
@@ -105,16 +106,37 @@ In a browser without a bundler, one line of import map tells it where the almana
 
 ## Examples
 
-[`examples/island/island.mjs`](examples/island/island.mjs) makes the film at the top of this page. A seed's noise
+[`examples/island/scene.js`](examples/island/scene.js) is the island at the top of this page. A seed's noise
 becomes a terraced island, the sea comes in, a river runs down, a forest grows, villages and roads appear, and the
-island lives through a day, a night and a storm. It uses only the almanac and Node's own modules, and it counts the
-techniques it calls as it goes.
+island lives through a day, a night and a storm. It uses only the almanac, and it counts the techniques it calls as it
+goes. `scene.js` puts it together from five parts, each a file you can read on its own:
 
-```sh
-node examples/island/island.mjs                         # island.gif and island.mp4 beside the script (needs ffmpeg)
-node examples/island/island.mjs --still 11 frame.png    # one frame, at 11 seconds
-node examples/island/island.mjs --seed amber-vale-7     # another island
-```
+| file         | what it makes                                                                                          |
+| ------------ | ------------------------------------------------------------------------------------------------------ |
+| `sprites.js` | the palette, and the small pictures drawn from it: trees, houses, villagers, deer, the boat            |
+| `world.js`   | the land, the river, villages and fields, roads, and where the trees and the lighthouse stand          |
+| `life.js`    | what moves, a step at a time: walkers, the herd, fish and a whale, gulls, smoke, rain, fireflies       |
+| `draw.js`    | one frame by day: the land from the back to the front, then everything standing on it, sorted by depth |
+| `overlay.js` | clouds, fog, the light of the hour, rain and lightning, the captions, the close-up and the fade        |
+
+The same scene runs in two places:
+
+- **In a browser**, [`examples/island/index.html`](examples/island/index.html) plays it live, with a timeline to
+  drag back to the seed, a box for your own seed, and every technique it has called linked to its catalog entry.
+  [Run it here](https://blaiselabs.github.io/procedural-almanac/examples/island/), or from a copy of this repository
+  with any static server (the browser loads the almanac as modules, which it will not do from a file):
+
+  ```sh
+  python3 -m http.server 8000          # then open http://localhost:8000/examples/island/
+  ```
+
+- **In Node**, [`examples/island/island.mjs`](examples/island/island.mjs) films it:
+
+  ```sh
+  node examples/island/island.mjs                         # island.gif and island.mp4 beside the script (needs ffmpeg)
+  node examples/island/island.mjs --still 11 frame.png    # one frame, at 11 seconds
+  node examples/island/island.mjs --seed amber-vale-7     # another island
+  ```
 
 ## How it is organised
 
@@ -126,7 +148,7 @@ node examples/island/island.mjs --seed amber-vale-7     # another island
 | `tests/checks/`          | every check, one sentence each, the same sentences the entries list, a file per module; the drawing checks read real pixels (@napi-rs/canvas, a dev dependency only) |
 | `tests/run.mjs`          | `npm test`: the checks, then the almanac held to itself (below)                                                                                                      |
 | `CATALOG.md`, `gallery/` | written from the above by `npm run docs`                                                                                                                             |
-| `examples/`              | scripts that use only the almanac; `examples/island` makes the film at the top of this page                                                                          |
+| `examples/`              | scenes that use only the almanac; `examples/island` is the island at the top of this page, live in a browser (`index.html`) or filmed in Node (`island.mjs`)         |
 
 `npm test` fails when any of these is true:
 
