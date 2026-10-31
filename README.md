@@ -1,16 +1,32 @@
 # procedural-almanac
 
-Procedural drawing and motion for the canvas and for pixel art: walk cycles, flocks, noise-made land, water,
-weather, light and projection, ways across a grid, where every technique cites where it came from.
+A JavaScript library of procedural generation techniques, with citations for every function.
 
-![An island drawn with nothing but the almanac: noise becomes terraces, the sea comes in, a river, a forest, villages
-and roads appear, then a day, a night and a storm](examples/island/island.gif)
+![An island built from noise, with terraces, a sea, a river, a forest, villages and roads, going through a day, a night and a storm](examples/island/island.gif)
 
-The island above is made with the almanac alone: [one script](examples/island/island.mjs) calls 85 of its functions,
-with no sprites or image files, and each caption names the functions on screen.
+That island was made with nothing but this library. One [scene](examples/island/scene.js) calls 85 of its functions, and each caption names the ones on screen.
 
-The almanac holds 162 techniques, 77 established and 85 original, citing 106 sources and held by 267 checks. The full
-list, with every source and every test, is the [catalog](CATALOG.md).
+No sprites or image files went into it.
+
+It also [runs in the browser](https://blaiselabs.github.io/procedural-almanac/examples/island/), where any seed grows a different island.
+
+## What's in it
+
+Say you want a leg that reaches for a point. [`twoBoneLimb`](CATALOG.md#twobonelimb) works out where the knee goes, and its catalog entry points to what to read for the math, in this case inverse kinematics and the law of cosines. The entry also lists what its tests check, like "when the point is in reach, the tip lands on it".
+
+There are 162 entries like that, each documenting a single function or class, and they come in two kinds.
+
+77 are established techniques. These cite where they come from, with an intro for background reading (often an encyclopedia article), a source such as a paper, book, standard or published code, or both.
+
+85 are originals, developed specifically for this almanac. Rather than citing an external source, their entries explain what they're for, what inspired them, what they build on and how they work in plain words. [`waterPixel`](CATALOG.md#waterpixel) is a good one to start with.
+
+Together they cite 106 references and are held by 267 checks. Each test is written as a sentence in the catalog, and the test run fails if a sentence isn't a real check, or a check isn't in the catalog.
+
+Not everything here is exotic. The 162 include small helpers like `clamp` and `lerp`, cited the same way as the rest.
+
+![Footfall diagrams of every gait](gallery/gaits.svg)
+
+The [catalog](CATALOG.md) has every function with its sources and tests. Here's how they're grouped.
 
 | module       | techniques                                                                                                                                                                                                                             |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -43,39 +59,28 @@ list, with every source and every test, is the [catalog](CATALOG.md).
 | `roofs`      | roofPlan, slopeShade, roofTexel                                                                                                                                                                                                        |
 | `relief`     | terraceLevel, wallShade, leafShade, crownRows, silhouetteNormals, crownClumps                                                                                                                                                          |
 
-## What it is
+## Who it's for
 
-An almanac: a catalog of techniques, each one a function you can import and use without reading its math, and each
-one telling you where to read the math if you want to.
+- Creative coders and generative artists who want proven techniques, like a limb that steps or legs that keep a gait, without deriving the math again.
+- Indie game developers drawing in 2D who want characters and scenery made from code instead of sprite sheets.
+- Learners who want to understand a technique. Every entry starts at a plain explanation and leads to the source.
+- Programs that build worlds as data, including ones written by language models, since they need functions with clear names and clear documentation.
 
-- **Established techniques** are someone else's work, and cite it: an _intro_ to start from (often an encyclopedia
-  article) and the _source_ it comes from (a paper, a book, a standard, published code).
-- **Originals** are this almanac's own. With nothing to cite, they explain themselves: their purpose, what inspired
-  them, which established techniques they build on, and how they work in plain words.
-- **Every entry lists its tests** as sentences ("when the point is in reach, the tip lands on it"), and the test run
-  fails if a sentence in the catalog is not a real check, or a check is not in the catalog.
+## What it isn't
 
-![Footfall diagrams of every gait](gallery/gaits.svg)
+It isn't a game engine, a physics library or a 3D renderer, and it doesn't own your render loop. These are functions you call, at your own pace.
 
-## Who it is for
+## Using it
 
-- **Creative coders and generative artists** who want proven techniques (a limb that steps, legs that keep a gait)
-  without deriving the math again.
-- **Indie game developers** drawing in 2D who want characters and scenery made from code instead of sprite sheets.
-- **Learners** who want to understand a technique: every entry starts at a plain explanation and leads to the source.
-- **Programs that build worlds as data**, including ones written by language models: they need primitives with clear
-  names and clear documentation.
+It isn't on npm yet, so it installs from GitHub.
 
-## What it is not
+```sh
+npm install github:BlaiseLabs/procedural-almanac
+```
 
-Not a game engine, not physics, not a 3D renderer, and not a framework that owns your render loop. These are functions
-you call, with your own canvas, at your own pace.
+The code is plain ES modules with no dependencies and no build step, and it runs in any modern browser and in Node 18 or later.
 
-## Use it
-
-Plain ES modules, no dependencies, no build step: it runs in any modern browser and in Node 18 or later. In Node,
-the drawing techniques need a canvas: tell the almanac how to make one, once (`setCanvasMaker`, with
-[@napi-rs/canvas](https://github.com/Brooooooklyn/canvas) for example).
+Here's that leg on a deer. Its leg length and gait are drawn from its kind's ranges, so the same seed gives the same deer every time.
 
 ```js
 import { SeededRandom, genomeFrom, gaitTiming, footStep, strideRate, twoBoneLimb } from 'procedural-almanac';
@@ -95,7 +100,9 @@ function foreLeg(distance, hip) {
 const { knee, foot } = foreLeg(10, { x: 10, y: deer.leg });
 ```
 
-In a browser without a bundler, one line of import map tells it where the almanac is:
+The `drawing`, `parts` and `display` modules draw on a canvas. In Node that means bringing one, like [@napi-rs/canvas](https://github.com/Brooooooklyn/canvas), and telling the almanac how to make it with `setCanvasMaker`. The rest need no canvas, and the island only uses functions that draw straight into a buffer of pixels.
+
+In a browser without a bundler, one line of import map tells it where the almanac is.
 
 ```html
 <script type="importmap">
@@ -103,54 +110,68 @@ In a browser without a bundler, one line of import map tells it where the almana
 </script>
 ```
 
-## Examples
+## The island example
 
-[`examples/island/island.mjs`](examples/island/island.mjs) makes the film at the top of this page. A seed's noise
-becomes a terraced island, the sea comes in, a river runs down, a forest grows, villages and roads appear, and the
-island lives through a day, a night and a storm. It uses only the almanac and Node's own modules, and it counts the
-techniques it calls as it goes.
+A seed's noise becomes a terraced island, the sea comes in, a river runs down, a forest grows, and villages and roads appear. Then the island goes through a day, a night and a storm before dissolving back into noise.
+
+[`scene.js`](examples/island/scene.js) puts it together from five parts, and each one can be read on its own.
+
+| file         | what it makes                                                                                            |
+| ------------ | -------------------------------------------------------------------------------------------------------- |
+| `sprites.js` | The palette, and the small pictures drawn from it, like trees, houses, villagers and deer                |
+| `world.js`   | The land, the river, villages and fields, roads, and where the trees and the lighthouse stand            |
+| `life.js`    | What moves, a step at a time, like walkers, the herd, fish and a whale, gulls, smoke, rain and fireflies |
+| `draw.js`    | One frame by day, the land from back to front and then everything standing on it, sorted by depth        |
+| `overlay.js` | Clouds, fog, the light of the hour, rain and lightning, the captions, the close-up and the fade          |
+
+The same scene runs in two places. In a browser, [`index.html`](examples/island/index.html) plays it live, with a timeline to drag back to the seed, a box for your own seed, and every function it has called linked to its catalog entry. The [live version](https://blaiselabs.github.io/procedural-almanac/examples/island/) is that same page. To run a local copy, start any static server, because browsers won't load modules from a file.
 
 ```sh
-node examples/island/island.mjs                         # island.gif and island.mp4 beside the script (needs ffmpeg)
+python3 -m http.server 8000          # then open http://localhost:8000/examples/island/
+```
+
+In Node, [`island.mjs`](examples/island/island.mjs) films it. Making the GIF and MP4 needs ffmpeg.
+
+```sh
+node examples/island/island.mjs                         # island.gif and island.mp4 beside the script
 node examples/island/island.mjs --still 11 frame.png    # one frame, at 11 seconds
 node examples/island/island.mjs --seed amber-vale-7     # another island
 ```
 
-## How it is organised
+## How the repo is laid out
 
-| file                     | what it holds                                                                                                                                                        |
-| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `src/`                   | the techniques; each one's doc comment (JSDoc) names its references with `@see`, and a step inside one can cite its own (`[law-of-cosines-wikipedia]`)               |
-| `almanac.json`           | the entries: for each technique, its kind and what the catalog says about it                                                                                         |
-| `references.json`        | the bibliography, in [CSL-JSON](https://citationstyles.org/), the format reference managers such as Zotero read and write                                            |
-| `tests/checks/`          | every check, one sentence each, the same sentences the entries list, a file per module; the drawing checks read real pixels (@napi-rs/canvas, a dev dependency only) |
-| `tests/run.mjs`          | `npm test`: the checks, then the almanac held to itself (below)                                                                                                      |
-| `CATALOG.md`, `gallery/` | written from the above by `npm run docs`                                                                                                                             |
-| `examples/`              | scripts that use only the almanac; `examples/island` makes the film at the top of this page                                                                          |
+| file                     | what it holds                                                                                                                                                           |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `src/`                   | The techniques. Each one's doc comment (JSDoc) names its references with `@see`, and a step inside one can cite its own (`[law-of-cosines-wikipedia]`)                  |
+| `almanac.json`           | The entries, with each technique's kind and what the catalog says about it                                                                                              |
+| `references.json`        | The bibliography, in [CSL-JSON](https://citationstyles.org/), the format reference managers such as Zotero read and write                                               |
+| `tests/checks/`          | Every check, one sentence each, the same sentences the entries list, in a file per module. The drawing checks read real pixels (@napi-rs/canvas, a dev dependency only) |
+| `tests/run.mjs`          | `npm test`, which runs the checks and then holds the almanac to the rules below                                                                                         |
+| `CATALOG.md`, `gallery/` | Written from the above by `npm run docs`                                                                                                                                |
+| `examples/`              | Scenes that use only the almanac                                                                                                                                        |
 
-`npm test` fails when any of these is true:
+`npm test` fails when any of these is true.
 
-- an export has no entry, or an entry no export;
-- an established entry cites nothing, or an original lacks its purpose, inspiration or plain-words description;
-- a reference is named that does not exist, or one exists that nothing cites;
-- the code's `@see` lines and its entry disagree;
-- a test sentence is not a real check, or a check is not listed;
-- this README's example does not run;
-- the catalog or the gallery is out of date.
+- An export has no entry, or an entry has no export.
+- An established entry cites nothing, or an original lacks its purpose, inspiration or plain-words description.
+- A reference is named that doesn't exist, or one exists that nothing cites.
+- The code's `@see` lines and its entry disagree.
+- A test sentence isn't a real check, or a check isn't listed.
+- The example in this README doesn't run.
+- The catalog or the gallery is out of date.
 
 ## Standards it follows
 
-[CSL-JSON](https://citationstyles.org/) for references, [JSDoc](https://jsdoc.app/) for doc comments,
-[Citation File Format](https://citation-file-format.github.io/) for citing the almanac itself (`CITATION.cff`),
-[Semantic Versioning](https://semver.org/) and [Keep a Changelog](https://keepachangelog.com/) for releases, and an
-[SPDX](https://spdx.org/licenses/) licence identifier.
+[CSL-JSON](https://citationstyles.org/) for references, [JSDoc](https://jsdoc.app/) for doc comments, [Citation File Format](https://citation-file-format.github.io/) for citing the almanac itself (`CITATION.cff`), [Semantic Versioning](https://semver.org/) and [Keep a Changelog](https://keepachangelog.com/) for releases, and an [SPDX](https://spdx.org/licenses/) license identifier.
 
 ## Contributing
 
-A better reference is welcome: it is a change to `references.json` and the entry that cites it. A new technique is its
-code, its entry and its checks; `npm test` says what is missing. If something here is called original but is in fact
-established, that is the most useful correction of all: show the source, and it moves.
+A better reference is welcome. That's a change to `references.json` and the entry that cites it.
 
-## Licence
+A new technique is its code, its entry and its checks, and `npm test` says what's missing.
+
+If something here is called original but is really established, that's the most useful correction of all. Show the source and it moves.
+
+## License
 
 [MIT](LICENSE).

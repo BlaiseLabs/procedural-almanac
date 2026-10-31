@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>One seed, one island · procedural-almanac</title>
+    <meta name="description" content="An island drawn live in the browser with nothing but procedural-almanac." />
+    <style>
+      :root {
+        --bg: #f3efe2;
+        --panel: #fffdf6;
+        --ink: #1c2026;
+        --muted: #5d6268;
+        --line: #d9d1bc;
+        --sea: #1f5a92;
+        --gold: #b98a12;
+        --chip: #ece5d0;
+        --mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
+        --body: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0e1622;
+          --panel: #152132;
+          --ink: #ece6d6;
+          --muted: #9aa3ad;
+          --line: #263548;
+          --sea: #6fc6dc;
+          --gold: #ffd36e;
+          --chip: #1c2b40;
+          color-scheme: dark;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font: 16px/1.5 var(--body);
+        padding: 24px max(16px, env(safe-area-inset-right)) 40px max(16px, env(safe-area-inset-left));
+      }
+      main {
+        max-width: 1164px;
+        margin: 0 auto;
+        display: grid;
+        gap: 18px;
+      }
+      header {
+        display: grid;
+        gap: 4px;
+      }
+      .lib {
+        font: 600 14px/1.2 var(--mono);
+        color: var(--gold);
+        letter-spacing: 0.02em;
+      }
+      .lib a {
+        color: inherit;
+      }
+      h1 {
+        margin: 0;
+        font: 700 clamp(26px, 5vw, 38px)/1.1 var(--mono);
+        letter-spacing: -0.01em;
+        text-wrap: balance;
+      }
+      .sub {
+        margin: 0;
+        color: var(--muted);
+        max-width: 70ch;
+      }
+      .stage {
+        background: #16182a;
+        border: 3px solid var(--ink);
+        line-height: 0;
+        width: fit-content;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      canvas {
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+        max-width: 100%;
+        height: auto;
+      }
+      .bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 14px;
+        align-items: center;
+      }
+      .time {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex: 1 1 320px;
+        min-width: 0;
+      }
+      input[type='range'] {
+        flex: 1;
+        min-width: 0;
+        accent-color: var(--sea);
+      }
+      .where {
+        font: 14px/1.2 var(--mono);
+        color: var(--muted);
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+        min-width: 17ch;
+      }
+      .seed {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex: 0 1 auto;
+        flex-wrap: wrap;
+      }
+      label {
+        font-size: 14px;
+        color: var(--muted);
+      }
+      input[type='text'] {
+        font: 15px/1.2 var(--mono);
+        color: var(--ink);
+        background: var(--panel);
+        border: 2px solid var(--line);
+        padding: 8px 10px;
+        width: 15ch;
+      }
+      button {
+        font: 600 15px/1 var(--body);
+        color: var(--bg);
+        background: var(--ink);
+        border: 2px solid var(--ink);
+        padding: 9px 14px;
+        cursor: pointer;
+      }
+      button.quiet {
+        background: transparent;
+        color: var(--ink);
+      }
+      button:focus-visible,
+      input:focus-visible,
+      a:focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 2px;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: default;
+      }
+      .status {
+        margin: 0;
+        min-height: 1.5em;
+        font-size: 14px;
+        color: var(--muted);
+      }
+      section {
+        display: grid;
+        gap: 10px;
+        border-top: 2px solid var(--line);
+        padding-top: 14px;
+      }
+      h2 {
+        margin: 0;
+        font: 700 18px/1.3 var(--mono);
+      }
+      h2 b {
+        color: var(--gold);
+        font-variant-numeric: tabular-nums;
+      }
+      .used {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .used a {
+        display: inline-block;
+        font: 13px/1 var(--mono);
+        padding: 6px 8px;
+        background: var(--chip);
+        color: var(--ink);
+        text-decoration: none;
+      }
+      .used a:hover {
+        color: var(--sea);
+      }
+      .used li.new a {
+        outline: 2px solid var(--gold);
+      }
+      footer {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      footer code {
+        font: 13px var(--mono);
+      }
+      footer a {
+        color: var(--sea);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="lib"><a href="https://github.com/BlaiseLabs/procedural-almanac">procedural-almanac</a></div>
+        <h1>One seed, one island</h1>
+        <p class="sub">
+          Drawn live in your browser with nothing but the almanac: a seed becomes noise, the noise an island, then the
+          sea, a river, a forest, villages and roads, a day, a night and a storm. No image files. Try your own seed.
+        </p>
+      </header>
+
+      <div class="stage">
+        <canvas id="screen" width="384" height="216" aria-label="The island, drawn live"></canvas>
+      </div>
+
+      <div class="bar">
+        <button type="button" id="play">Pause</button>
+        <div class="time">
+          <input type="range" id="scrub" min="0" max="403" value="0" aria-label="Time in the film" />
+          <span class="where" id="where">life · 10.2 s</span>
+        </div>
+        <form class="seed" id="seedForm">
+          <label for="seed">Seed</label>
+          <input type="text" id="seed" value="heron-bay-8" spellcheck="false" autocomplete="off" />
+          <button type="submit" id="grow">Grow</button>
+          <button type="button" class="quiet" id="random">Random</button>
+        </form>
+      </div>
+      <p class="status" id="status" role="status"></p>
+
+      <section>
+        <h2>Called so far: <b id="count">0</b> of <span id="total">162</span> techniques</h2>
+        <ul class="used" id="used"></ul>
+      </section>
+
+      <footer>
+        Every function here has an entry in the
+        <a href="https://github.com/BlaiseLabs/procedural-almanac/blob/main/CATALOG.md">catalog</a> with its sources and
+        its tests. The scene is <code>examples/island/scene.js</code>; in Node,
+        <code>node examples/island/island.mjs</code> films it as a GIF and an MP4.
+      </footer>
+    </main>
+
+    <script type="module">
+      import { island } from './scene.js';
+      import * as almanac from '../../src/index.js';
+
+      const FIRST = [
+        'amber',
+        'ash',
+        'briar',
+        'cedar',
+        'cloud',
+        'coral',
+        'dawn',
+        'drift',
+        'ember',
+        'fern',
+        'frost',
+        'gale',
+        'hazel',
+        'ivory',
+        'jade',
+        'juniper',
+        'kelp',
+        'linen',
+        'maple',
+        'misty',
+        'moss',
+        'opal',
+        'pearl',
+        'pine',
+        'quiet',
+        'rain',
+        'rose',
+        'rust',
+        'salt',
+        'sage',
+        'slate',
+        'tidal',
+      ];
+      const SECOND = [
+        'bay',
+        'bank',
+        'beach',
+        'bluff',
+        'brook',
+        'cape',
+        'cliff',
+        'cove',
+        'creek',
+        'dune',
+        'fen',
+        'glen',
+        'harbour',
+        'haven',
+        'heron',
+        'isle',
+        'key',
+        'lagoon',
+        'marsh',
+        'mere',
+        'point',
+        'reef',
+        'rock',
+        'sands',
+        'shoal',
+        'sound',
+        'spit',
+        'strand',
+        'tarn',
+        'vale',
+        'wharf',
+        'wood',
+      ];
+      const STAGE = {
+        seed: 'the seed',
+        island: 'the island',
+        rise: 'terraces rise',
+        sea: 'the sea comes in',
+        paint: 'the land is painted',
+        river: 'the river',
+        forest: 'the forest',
+        village: 'villages',
+        roads: 'roads',
+        life: 'life',
+        dusk: 'dusk',
+        night: 'night',
+        storm: 'the storm',
+        dawn: 'dawn',
+        fade: 'back to noise',
+      };
+      const $ = (id) => document.getElementById(id);
+      const canvas = $('screen'),
+        ctx = canvas.getContext('2d'),
+        scrub = $('scrub'),
+        play = $('play'),
+        status = $('status');
+      $('total').textContent = Object.keys(almanac).length;
+
+      let scene = null,
+        f = 0,
+        playing = !matchMedia('(prefers-reduced-motion: reduce)').matches,
+        clock = 0,
+        last = performance.now(),
+        shown = new Set();
+
+      function fit() {
+        const room = canvas.closest('main').clientWidth - 6,
+          k = Math.max(1, Math.floor(room / 384));
+        canvas.style.width = room < 384 ? room + 'px' : 384 * k + 'px';
+      }
+      addEventListener('resize', fit);
+      fit();
+
+      function draw() {
+        const px = scene.frame(f);
+        ctx.putImageData(
+          new ImageData(new Uint8ClampedArray(px.buffer, px.byteOffset, px.byteLength), scene.W, scene.H),
+          0,
+          0,
+        );
+        scrub.value = f;
+        const t = f / scene.FPS,
+          k = Object.keys(scene.T).find((key) => t >= scene.T[key][0] && t < scene.T[key][1]) || 'fade';
+        $('where').textContent = `${STAGE[k]} · ${t.toFixed(1)} s`;
+        listUsed();
+      }
+
+      function listUsed() {
+        if (scene.used.size === shown.size) return;
+        const list = $('used');
+        list.querySelectorAll('li.new').forEach((li) => li.classList.remove('new'));
+        for (const name of [...scene.used].sort()) {
+          if (shown.has(name)) continue;
+          shown.add(name);
+          const li = document.createElement('li'),
+            a = document.createElement('a');
+          a.href = 'https://github.com/BlaiseLabs/procedural-almanac/blob/main/CATALOG.md#' + name.toLowerCase();
+          a.textContent = name;
+          li.className = 'new';
+          li.append(a);
+          const after = [...list.children].find((c) => c.textContent > name);
+          list.insertBefore(li, after || null);
+        }
+        $('count').textContent = scene.used.size;
+      }
+
+      function tick(now) {
+        const dt = Math.min(0.25, (now - last) / 1000);
+        last = now;
+        if (playing && scene) {
+          clock += dt;
+          const step = Math.floor(clock * scene.FPS);
+          if (step > 0) {
+            clock -= step / scene.FPS;
+            f = (f + step) % scene.frames;
+            draw();
+          }
+        }
+        requestAnimationFrame(tick);
+      }
+
+      function setPlaying(on) {
+        playing = on;
+        play.textContent = on ? 'Pause' : 'Play';
+        clock = 0;
+      }
+
+      function grow(phrase) {
+        status.textContent = `Growing ${phrase}…`;
+        $('grow').disabled = $('random').disabled = true;
+        setTimeout(() => {
+          try {
+            const t0 = performance.now();
+            scene = island(phrase);
+            shown = new Set();
+            $('used').replaceChildren();
+            scrub.max = scene.frames - 1;
+            f = Math.round(scene.opening * scene.FPS);
+            draw();
+            status.textContent = `${scene.phrase} is seed ${scene.seed}, grown in ${Math.round(performance.now() - t0)} ms. Drag the timeline back to watch it built from the seed.`;
+            const url = new URL(location.href);
+            url.searchParams.set('seed', scene.phrase);
+            history.replaceState(null, '', url);
+          } catch (e) {
+            status.textContent = `That seed could not be grown (${e.message}). Try another.`;
+          }
+          $('grow').disabled = $('random').disabled = false;
+        }, 30);
+      }
+
+      play.addEventListener('click', () => setPlaying(!playing));
+      scrub.addEventListener('input', () => {
+        if (!scene) return;
+        f = +scrub.value;
+        draw();
+      });
+      $('seedForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const phrase = $('seed').value.trim();
+        if (phrase) grow(phrase);
+      });
+      $('random').addEventListener('click', () => {
+        const phrase = almanac.seedWords(FIRST, SECOND);
+        $('seed').value = phrase;
+        grow(phrase);
+      });
+      addEventListener('keydown', (e) => {
+        if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'BUTTON') {
+          e.preventDefault();
+          setPlaying(!playing);
+        }
+      });
+
+      const asked = new URLSearchParams(location.search).get('seed');
+      if (asked) $('seed').value = asked;
+      setPlaying(playing);
+      grow($('seed').value);
+      requestAnimationFrame(tick);
+    </script>
+  </body>
+</html>
