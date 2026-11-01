@@ -1,6 +1,6 @@
 // Growth: things that branch (trees, coral, antlers of crystal) and things that sway from a fixed foot (kelp, vines,
 // reeds, banners). Both give geometry: where each part goes, in the order to draw them; drawing them is the caller's.
-import { clamp } from './numbers.js';
+import { clamp } from '../core/numbers.js';
 
 /**
  * A branching thing (a tree, a coral, a crystal antler): a trunk that forks, each branch shorter and thinner than the

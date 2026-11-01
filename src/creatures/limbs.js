@@ -1,6 +1,6 @@
 // Limbs: bones joined end to end, posed by where their tip should be (inverse kinematics), not by their angles.
 
-import { clamp } from './numbers.js';
+import { clamp } from '../core/numbers.js';
 
 /**
  * A limb of two bones (a thigh and a shin, an upper arm and a forearm) reaching for a point: where its middle joint

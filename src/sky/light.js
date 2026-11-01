@@ -1,7 +1,7 @@
 // Light: the day turning (the sky's colours, how much light there is, where the sun and moon are), a colour as that
 // light shows it at a distance, and stars that twinkle.
-import { clamp, lerp } from './numbers.js';
-import { hexToRgb, mixColour } from './colour.js';
+import { clamp, lerp } from '../core/numbers.js';
+import { hexToRgb, mixColour } from '../core/colour.js';
 
 const TAU = Math.PI * 2;
 

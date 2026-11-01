@@ -175,7 +175,7 @@ Every entry also lists its tests, with a short description of what each test ver
 
 ### hash32
 
-`hash32(n)` in [src/random.js](src/random.js)
+`hash32(n)` in [src/core/random.js](src/core/random.js)
 
 One 32-bit integer, well mixed: inputs one bit apart give outputs about half their bits apart.
 
@@ -191,7 +191,7 @@ One 32-bit integer, well mixed: inputs one bit apart give outputs about half the
 
 ### fnv1a
 
-`fnv1a(s)` in [src/random.js](src/random.js)
+`fnv1a(s)` in [src/core/random.js](src/core/random.js)
 
 A string as a 32-bit number: each character mixed in with an exclusive or, then a multiplication.
 
@@ -206,7 +206,7 @@ A string as a 32-bit number: each character mixed in with an exclusive or, then 
 
 ### hashString
 
-`hashString(s)` in [src/random.js](src/random.js)
+`hashString(s)` in [src/core/random.js](src/core/random.js)
 
 A string as a well-mixed 32-bit number: FNV-1a, then hash32 over it.
 
@@ -225,7 +225,7 @@ A string as a well-mixed 32-bit number: FNV-1a, then hash32 over it.
 
 ### SeededRandom
 
-`new SeededRandom(seed)` in [src/random.js](src/random.js)
+`new SeededRandom(seed)` in [src/core/random.js](src/core/random.js)
 
 Numbers in [0, 1) from a seed: the same seed, the same sequence; with ranges, whole numbers, chances, signs and picks.
 
@@ -247,7 +247,7 @@ Numbers in [0, 1) from a seed: the same seed, the same sequence; with ranges, wh
 
 ### twoBoneLimb
 
-`twoBoneLimb(hip, target, upper, lower, bend)` in [src/limbs.js](src/limbs.js)
+`twoBoneLimb(hip, target, upper, lower, bend)` in [src/creatures/limbs.js](src/creatures/limbs.js)
 
 A limb of two bones reaching for a point: where its middle joint goes so its tip lands on the point.
 
@@ -270,7 +270,7 @@ A limb of two bones reaching for a point: where its middle joint goes so its tip
 
 ### gaitTiming
 
-`gaitTiming(gait, pairs)` in [src/gait.js](src/gait.js)
+`gaitTiming(gait, pairs)` in [src/creatures/gait.js](src/creatures/gait.js)
 
 Which legs step together in a gait: the phase of each leg, pair by pair, front to back.
 
@@ -298,7 +298,7 @@ Which legs step together in a gait: the phase of each leg, pair by pair, front t
 
 ### clamp
 
-`clamp(v, lo, hi)` in [src/numbers.js](src/numbers.js)
+`clamp(v, lo, hi)` in [src/core/numbers.js](src/core/numbers.js)
 
 A number kept inside a range.
 
@@ -313,7 +313,7 @@ A number kept inside a range.
 
 ### lerp
 
-`lerp(a, b, t)` in [src/numbers.js](src/numbers.js)
+`lerp(a, b, t)` in [src/core/numbers.js](src/core/numbers.js)
 
 Part of the way from one number to another, in a straight line.
 
@@ -328,7 +328,7 @@ Part of the way from one number to another, in a straight line.
 
 ### smoothstep
 
-`smoothstep(edge0, edge1, v)` in [src/numbers.js](src/numbers.js)
+`smoothstep(edge0, edge1, v)` in [src/core/numbers.js](src/core/numbers.js)
 
 Where a number is between two edges, eased so it starts and ends level.
 
@@ -343,7 +343,7 @@ Where a number is between two edges, eased so it starts and ends level.
 
 ### wrap
 
-`wrap(v, span)` in [src/numbers.js](src/numbers.js)
+`wrap(v, span)` in [src/core/numbers.js](src/core/numbers.js)
 
 A number wrapped round a span, never negative: what scrolls off one side comes back on the other.
 
@@ -359,7 +359,7 @@ A number wrapped round a span, never negative: what scrolls off one side comes b
 
 ### latticeRandom
 
-`latticeRandom(x, y, seed)` in [src/noise.js](src/noise.js)
+`latticeRandom(x, y, seed)` in [src/core/noise.js](src/core/noise.js)
 
 A number in [0, 1) for each point of a grid and a seed: the random values value noise blends.
 
@@ -377,7 +377,7 @@ A number in [0, 1) for each point of a grid and a seed: the random values value 
 
 ### valueNoise
 
-`valueNoise(x, y, seed)` in [src/noise.js](src/noise.js)
+`valueNoise(x, y, seed)` in [src/core/noise.js](src/core/noise.js)
 
 Smooth noise in 0..1 across the plane: a random number at each grid point, blended between them.
 
@@ -395,7 +395,7 @@ Smooth noise in 0..1 across the plane: a random number at each grid point, blend
 
 ### fractalNoise
 
-`fractalNoise(x, y, seed, octaves, gain, lacunarity)` in [src/noise.js](src/noise.js)
+`fractalNoise(x, y, seed, octaves, gain, lacunarity)` in [src/core/noise.js](src/core/noise.js)
 
 Noise with detail at every size: value noise at several scales, each finer one fainter.
 
@@ -414,7 +414,7 @@ Noise with detail at every size: value noise at several scales, each finer one f
 
 ### ridgedNoise
 
-`ridgedNoise(x, y, seed, octaves)` in [src/noise.js](src/noise.js)
+`ridgedNoise(x, y, seed, octaves)` in [src/core/noise.js](src/core/noise.js)
 
 Noise whose highs are thin sharp lines: each scale of fractal noise folded at its middle.
 
@@ -431,7 +431,7 @@ Noise whose highs are thin sharp lines: each scale of fractal noise folded at it
 
 ### noiseLine
 
-`noiseLine(x, seed)` in [src/noise.js](src/noise.js)
+`noiseLine(x, seed)` in [src/core/noise.js](src/core/noise.js)
 
 Value noise along a line: a number in 0..1 that wanders smoothly as x moves.
 
@@ -447,7 +447,7 @@ Value noise along a line: a number in 0..1 that wanders smoothly as x moves.
 
 ### hexToRgb
 
-`hexToRgb(hex)` in [src/colour.js](src/colour.js)
+`hexToRgb(hex)` in [src/core/colour.js](src/core/colour.js)
 
 A "#rrggbb" or "#rgb" colour as [red, green, blue].
 
@@ -462,7 +462,7 @@ A "#rrggbb" or "#rgb" colour as [red, green, blue].
 
 ### rgbToHex
 
-`rgbToHex(c)` in [src/colour.js](src/colour.js)
+`rgbToHex(c)` in [src/core/colour.js](src/core/colour.js)
 
 [red, green, blue] as "#rrggbb", rounded and kept in range.
 
@@ -477,7 +477,7 @@ A "#rrggbb" or "#rgb" colour as [red, green, blue].
 
 ### rgba
 
-`rgba(c, alpha)` in [src/colour.js](src/colour.js)
+`rgba(c, alpha)` in [src/core/colour.js](src/core/colour.js)
 
 [red, green, blue] and an opacity as a CSS colour for a canvas.
 
@@ -491,7 +491,7 @@ A "#rrggbb" or "#rgb" colour as [red, green, blue].
 
 ### mixColour
 
-`mixColour(a, b, t)` in [src/colour.js](src/colour.js)
+`mixColour(a, b, t)` in [src/core/colour.js](src/core/colour.js)
 
 Part of the way from one colour to another, channel by channel.
 
@@ -505,7 +505,7 @@ Part of the way from one colour to another, channel by channel.
 
 ### shade
 
-`shade(c, k)` in [src/colour.js](src/colour.js)
+`shade(c, k)` in [src/core/colour.js](src/core/colour.js)
 
 A colour darkened toward black or lightened toward white.
 
@@ -519,7 +519,7 @@ A colour darkened toward black or lightened toward white.
 
 ### luma
 
-`luma(c)` in [src/colour.js](src/colour.js)
+`luma(c)` in [src/core/colour.js](src/core/colour.js)
 
 How bright a colour looks, 0..1, weighing green most and blue least as the eye does.
 
@@ -535,7 +535,7 @@ How bright a colour looks, 0..1, weighing green most and blue least as the eye d
 
 ### rgbToHsl
 
-`rgbToHsl([r, g, b])` in [src/colour.js](src/colour.js)
+`rgbToHsl([r, g, b])` in [src/core/colour.js](src/core/colour.js)
 
 A colour as hue, saturation and lightness: the colour wheel's terms.
 
@@ -550,7 +550,7 @@ A colour as hue, saturation and lightness: the colour wheel's terms.
 
 ### hslToRgb
 
-`hslToRgb([h, s, l])` in [src/colour.js](src/colour.js)
+`hslToRgb([h, s, l])` in [src/core/colour.js](src/core/colour.js)
 
 Hue, saturation and lightness back to [red, green, blue].
 
@@ -565,7 +565,7 @@ Hue, saturation and lightness back to [red, green, blue].
 
 ### aerialPerspective
 
-`aerialPerspective(c, day, depth, haze)` in [src/light.js](src/light.js)
+`aerialPerspective(c, day, depth, haze)` in [src/sky/light.js](src/sky/light.js)
 
 A colour as the day shows it at a distance: faded toward the horizon the further it is, and dimmed after dark.
 
@@ -583,7 +583,7 @@ A colour as the day shows it at a distance: faded toward the horizon the further
 
 ### parallax
 
-`parallax(camera, depth)` in [src/projection.js](src/projection.js)
+`parallax(camera, depth)` in [src/world/projection.js](src/world/projection.js)
 
 How far a layer scrolls when the camera moves: in proportion to how near it is.
 
@@ -597,7 +597,7 @@ How far a layer scrolls when the camera moves: in proportion to how near it is.
 
 ### turnedProjection
 
-`turnedProjection(x, y, z, view)` in [src/projection.js](src/projection.js)
+`turnedProjection(x, y, z, view)` in [src/world/projection.js](src/world/projection.js)
 
 A point of a turning grid to the screen: turned round the centre, tipped back to half its depth, lifted by its height.
 
@@ -615,7 +615,7 @@ A point of a turning grid to the screen: turned round the centre, tipped back to
 
 ### turnedDepth
 
-`turnedDepth(x, y, size, angle)` in [src/projection.js](src/projection.js)
+`turnedDepth(x, y, size, angle)` in [src/world/projection.js](src/world/projection.js)
 
 How far back a point of a turning grid is: draw the farthest first, so the near is painted over the far.
 
@@ -629,7 +629,7 @@ How far back a point of a turning grid is: draw the farthest first, so the near 
 
 ### flockStep
 
-`flockStep(agents, dt, o)` in [src/motion.js](src/motion.js)
+`flockStep(agents, dt, o)` in [src/creatures/motion.js](src/creatures/motion.js)
 
 A flock or a school a moment later: each one steers to the centre and the average heading, away from any too close, and away from a hunter.
 
@@ -652,7 +652,7 @@ A flock or a school a moment later: each one steers to the centre and the averag
 
 ### gridWalk
 
-`gridWalk(walker, dt, o)` in [src/motion.js](src/motion.js)
+`gridWalk(walker, dt, o)` in [src/creatures/motion.js](src/creatures/motion.js)
 
 A walker on a grid a moment later: toward the middle of its next tile, and on arriving, a random allowed neighbour next, sometimes after a pause.
 
@@ -670,7 +670,7 @@ A walker on a grid a moment later: toward the middle of its next tile, and on ar
 
 ### particleField
 
-`particleField(count, width, height, random)` in [src/particles.js](src/particles.js)
+`particleField(count, width, height, random)` in [src/creatures/particles.js](src/creatures/particles.js)
 
 Many small things strewn at random over a field, each with a depth, a phase and a number of its own.
 
@@ -686,7 +686,7 @@ Many small things strewn at random over a field, each with a depth, a phase and 
 
 ### branchingTree
 
-`branchingTree(x, y, plan, k, random)` in [src/growth.js](src/growth.js)
+`branchingTree(x, y, plan, k, random)` in [src/world/growth.js](src/world/growth.js)
 
 A branching thing (a tree, a coral, a crystal antler): a trunk that forks, each branch shorter and thinner, to the tips.
 
@@ -708,7 +708,7 @@ A branching thing (a tree, a coral, a crystal antler): a trunk that forks, each 
 
 ### stampCache
 
-`stampCache(limit)` in [src/canvas.js](src/canvas.js)
+`stampCache(limit)` in [src/canvas/canvas.js](src/canvas/canvas.js)
 
 A cache of things drawn once and stamped many times, forgetting the oldest past its limit.
 
@@ -724,7 +724,7 @@ A cache of things drawn once and stamped many times, forgetting the oldest past 
 
 ### grain
 
-`grain(g, w, h, amount, mode)` in [src/drawing.js](src/drawing.js)
+`grain(g, w, h, amount, mode)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 Grain over a whole picture (paper, film): a fixed texture of fine noise laid over everything by a blend mode.
 
@@ -742,7 +742,7 @@ Grain over a whole picture (paper, film): a fixed texture of fine noise laid ove
 
 ### vignette
 
-`vignette(g, w, h, amount)` in [src/drawing.js](src/drawing.js)
+`vignette(g, w, h, amount)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 The picture darkened toward its edges and corners, its middle left clear.
 
@@ -756,7 +756,7 @@ The picture darkened toward its edges and corners, its middle left clear.
 
 ### mirrorBelow
 
-`mirrorBelow(g, w, h, o)` in [src/drawing.js](src/drawing.js)
+`mirrorBelow(g, w, h, o)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 A mirror of what is already drawn above a line, laid below it, fading and rippling (a wet street, a still lake).
 
@@ -772,7 +772,7 @@ A mirror of what is already drawn above a line, laid below it, fading and rippli
 
 ### drawList
 
-`drawList(g, items)` in [src/display.js](src/display.js)
+`drawList(g, items)` in [src/canvas/display.js](src/canvas/display.js)
 
 Draws a display list: a drawing given as data (shapes with their fills and strokes, and groups that move, blend or shade them).
 
@@ -791,7 +791,7 @@ Draws a display list: a drawing given as data (shapes with their fills and strok
 
 ### latticeHash
 
-`latticeHash(x, y, seed)` in [src/random.js](src/random.js)
+`latticeHash(x, y, seed)` in [src/core/random.js](src/core/random.js)
 
 One well-mixed 32-bit number for a point of a grid and a seed: the whole number latticeRandom divides into [0, 1).
 
@@ -807,7 +807,7 @@ One well-mixed 32-bit number for a point of a grid and a seed: the whole number 
 
 ### linearCongruential
 
-`linearCongruential(seed)` in [src/random.js](src/random.js)
+`linearCongruential(seed)` in [src/core/random.js](src/core/random.js)
 
 A seeded stream of numbers in [0, 1), each the last times a constant plus a constant, kept to 32 bits (Numerical Recipes' constants).
 
@@ -822,7 +822,7 @@ A seeded stream of numbers in [0, 1), each the last times a constant plus a cons
 
 ### angleDiff
 
-`angleDiff(a, b)` in [src/numbers.js](src/numbers.js)
+`angleDiff(a, b)` in [src/core/numbers.js](src/core/numbers.js)
 
 The signed turn from one angle to another the short way round, between -pi and pi, however many times round either has gone.
 
@@ -837,7 +837,7 @@ The signed turn from one angle to another the short way round, between -pi and p
 
 ### noiseTile
 
-`noiseTile(size, cells, lattice)` in [src/noise.js](src/noise.js)
+`noiseTile(size, cells, lattice)` in [src/core/noise.js](src/core/noise.js)
 
 A square of value noise that tiles: its right edge meets its left and its bottom its top, so it can be scrolled for ever.
 
@@ -853,7 +853,7 @@ A square of value noise that tiles: its right edge meets its left and its bottom
 
 ### packRgb
 
-`packRgb(r, g, b)` in [src/pixels.js](src/pixels.js)
+`packRgb(r, g, b)` in [src/pixels/pixels.js](src/pixels/pixels.js)
 
 A colour as one 32-bit number the way an ImageData keeps a pixel when its bytes are read as a Uint32Array: 0xAABBGGRR, opaque.
 
@@ -869,7 +869,7 @@ A colour as one 32-bit number the way an ImageData keeps a pixel when its bytes 
 
 ### mixPacked
 
-`mixPacked(a, b, t)` in [src/pixels.js](src/pixels.js)
+`mixPacked(a, b, t)` in [src/pixels/pixels.js](src/pixels/pixels.js)
 
 Two packed colours mixed, red, green and blue each a share of the way from one to the other.
 
@@ -883,7 +883,7 @@ Two packed colours mixed, red, green and blue each a share of the way from one t
 
 ### packedHsl
 
-`packedHsl(h, s, l)` in [src/pixels.js](src/pixels.js)
+`packedHsl(h, s, l)` in [src/pixels/pixels.js](src/pixels/pixels.js)
 
 A packed colour from hue (degrees), saturation and lightness.
 
@@ -898,7 +898,7 @@ A packed colour from hue (degrees), saturation and lightness.
 
 ### packedToHsl
 
-`packedToHsl(c)` in [src/pixels.js](src/pixels.js)
+`packedToHsl(c)` in [src/pixels/pixels.js](src/pixels/pixels.js)
 
 A packed colour's hue (degrees), saturation and lightness.
 
@@ -912,7 +912,7 @@ A packed colour's hue (degrees), saturation and lightness.
 
 ### bayerThreshold
 
-`bayerThreshold(x, y)` in [src/pixels.js](src/pixels.js)
+`bayerThreshold(x, y)` in [src/pixels/pixels.js](src/pixels/pixels.js)
 
 The ordered-dithering threshold at a pixel: the 4 x 4 Bayer matrix repeated across the picture, as a number in 0..1.
 
@@ -927,7 +927,7 @@ The ordered-dithering threshold at a pixel: the 4 x 4 Bayer matrix repeated acro
 
 ### heightWater
 
-`heightWater(e, cut)` in [src/land.js](src/land.js)
+`heightWater(e, cut)` in [src/world/land.js](src/world/land.js)
 
 What a height of the land makes it by the rule lower is water, higher is ground: water as deep as it is low, a shore just above.
 
@@ -941,7 +941,7 @@ What a height of the land makes it by the rule lower is water, higher is ground:
 
 ### ellipseRows
 
-`ellipseRows(cx, cy, rx, ry, row)` in [src/raster.js](src/raster.js)
+`ellipseRows(cx, cy, rx, ry, row)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 The rows a filled ellipse covers, each a run of whole pixels: the half-width at each row from the ellipse's equation, rounded inward.
 
@@ -957,7 +957,7 @@ The rows a filled ellipse covers, each a run of whole pixels: the half-width at 
 
 ### fillEllipse
 
-`fillEllipse(r, cx, cy, rx, ry, c)` in [src/raster.js](src/raster.js)
+`fillEllipse(r, cx, cy, rx, ry, c)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 A filled ellipse in one colour in a pixel buffer, row by row, clipped to the buffer.
 
@@ -972,7 +972,7 @@ A filled ellipse in one colour in a pixel buffer, row by row, clipped to the buf
 
 ### capsuleSteps
 
-`capsuleSteps(xa, ya, ra, xb, yb, rb, disc)` in [src/raster.js](src/raster.js)
+`capsuleSteps(xa, ya, ra, xb, yb, rb, disc)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 A capsule (a line with a thickness at each end, changing evenly) as discs set along it, about one and a half to a pixel of length.
 
@@ -986,7 +986,7 @@ A capsule (a line with a thickness at each end, changing evenly) as discs set al
 
 ### lineCells
 
-`lineCells(xa, ya, xb, yb, plot)` in [src/raster.js](src/raster.js)
+`lineCells(xa, ya, xb, yb, plot)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 The cells of a line between two pixels, one step at a time with a whole-number error (Bresenham), in every direction.
 
@@ -1000,7 +1000,7 @@ The cells of a line between two pixels, one step at a time with a whole-number e
 
 ### polygonRows
 
-`polygonRows(pts, h, row)` in [src/raster.js](src/raster.js)
+`polygonRows(pts, h, row)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 The rows a filled polygon covers: each row's edge crossings sorted and taken in pairs (the even-odd rule).
 
@@ -1015,7 +1015,7 @@ The rows a filled polygon covers: each row's edge crossings sorted and taken in 
 
 ### ditherEllipse
 
-`ditherEllipse(r, cx, cy, rx, ry, c, alpha)` in [src/raster.js](src/raster.js)
+`ditherEllipse(r, cx, cy, rx, ry, c, alpha)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 A see-through ellipse without mixing colours: a share of its pixels set in the 4 x 4 ordered-dither pattern.
 
@@ -1030,7 +1030,7 @@ A see-through ellipse without mixing colours: a share of its pixels set in the 4
 
 ### shadeEllipse
 
-`shadeEllipse(r, cx, cy, rx, ry, k)` in [src/raster.js](src/raster.js)
+`shadeEllipse(r, cx, cy, rx, ry, k)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 A shadow: the pixels under an ellipse multiplied darker, a little bluer than redder, the edge a pixel edge.
 
@@ -1045,7 +1045,7 @@ A shadow: the pixels under an ellipse multiplied darker, a little bluer than red
 
 ### blitSprite
 
-`blitSprite(r, s, x, y, flip)` in [src/raster.js](src/raster.js)
+`blitSprite(r, s, x, y, flip)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 A sprite stamped into a buffer at its anchor, mirrored if asked, its empty pixels see-through, clipped.
 
@@ -1060,7 +1060,7 @@ A sprite stamped into a buffer at its anchor, mirrored if asked, its empty pixel
 
 ### blitSway
 
-`blitSway(r, s, x, y, sway)` in [src/raster.js](src/raster.js)
+`blitSway(r, s, x, y, sway)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 A sprite stamped with each row shifted sideways by a sway at its height: a shear that bends it without drawing it again.
 
@@ -1075,7 +1075,7 @@ A sprite stamped with each row shifted sideways by a sway at its height: a shear
 
 ### outlinePass
 
-`outlinePass(r, c, xa, ya, xb, yb)` in [src/raster.js](src/raster.js)
+`outlinePass(r, c, xa, ya, xb, yb)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 A line round everything drawn in a buffer: each empty pixel touching a drawn one on a side becomes the line.
 
@@ -1090,7 +1090,7 @@ A line round everything drawn in a buffer: each empty pixel touching a drawn one
 
 ### cutSprite
 
-`cutSprite(r, xa, ya, xb, yb, ax, ay)` in [src/raster.js](src/raster.js)
+`cutSprite(r, xa, ya, xb, yb, ax, ay)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 A sprite cut out of a buffer: a box copied, with its anchor kept at the same point of the picture.
 
@@ -1104,7 +1104,7 @@ A sprite cut out of a buffer: a box copied, with its anchor kept at the same poi
 
 ### drawnBounds
 
-`drawnBounds(r)` in [src/raster.js](src/raster.js)
+`drawnBounds(r)` in [src/pixels/raster.js](src/pixels/raster.js)
 
 The box round everything drawn in a buffer, or nothing if nothing is.
 
@@ -1118,7 +1118,7 @@ The box round everything drawn in a buffer, or nothing if nothing is.
 
 ### scalePacked
 
-`scalePacked(c, k)` in [src/pixels.js](src/pixels.js)
+`scalePacked(c, k)` in [src/pixels/pixels.js](src/pixels/pixels.js)
 
 A packed colour multiplied by a number, each part held at 255: a multiply by a grey.
 
@@ -1132,7 +1132,7 @@ A packed colour multiplied by a number, each part held at 255: a multiply by a g
 
 ### outlineSprite
 
-`outlineSprite(px, w, h, ink)` in [src/sprites.js](src/sprites.js)
+`outlineSprite(px, w, h, ink)` in [src/pixels/sprites.js](src/pixels/sprites.js)
 
 A sprite's pixels with a line round them: every empty pixel touching a drawn one on a side, at the picture's edge too.
 
@@ -1147,7 +1147,7 @@ A sprite's pixels with a line round them: every empty pixel touching a drawn one
 
 ### spriteFromRows
 
-`spriteFromRows(rows, colourOf, o)` in [src/sprites.js](src/sprites.js)
+`spriteFromRows(rows, colourOf, o)` in [src/pixels/sprites.js](src/pixels/sprites.js)
 
 A sprite written as rows of letters, one letter a pixel, read through a palette, with room for a line round it.
 
@@ -1162,7 +1162,7 @@ A sprite written as rows of letters, one letter a pixel, read through a palette,
 
 ### layTemplate
 
-`layTemplate(grid, rows, top, flip, keep)` in [src/sprites.js](src/sprites.js)
+`layTemplate(grid, rows, top, flip, keep)` in [src/pixels/sprites.js](src/pixels/sprites.js)
 
 A template of letters laid onto a grid of letters, its dots see-through, mirrored if asked: a picture built up from parts.
 
@@ -1177,7 +1177,7 @@ A template of letters laid onto a grid of letters, its dots see-through, mirrore
 
 ### gridPixels
 
-`gridPixels(grid, palette)` in [src/sprites.js](src/sprites.js)
+`gridPixels(grid, palette)` in [src/pixels/sprites.js](src/pixels/sprites.js)
 
 A grid of letters as pixels, each letter read through a palette of packed colours.
 
@@ -1191,7 +1191,7 @@ A grid of letters as pixels, each letter read through a palette of packed colour
 
 ### packSheet
 
-`packSheet(frames, fw, fh, across)` in [src/sprites.js](src/sprites.js)
+`packSheet(frames, fw, fh, across)` in [src/pixels/sprites.js](src/pixels/sprites.js)
 
 Frames of one size packed into a sheet, so many across a row, row after row.
 
@@ -1205,7 +1205,7 @@ Frames of one size packed into a sheet, so many across a row, row after row.
 
 ### dampedSpring
 
-`dampedSpring(x, v, target, stiffness, damping, dt)` in [src/bodies.js](src/bodies.js)
+`dampedSpring(x, v, target, stiffness, damping, dt)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 One step of a damped spring: pulled toward its rest, slowed by damping, the speed updated before the place.
 
@@ -1220,7 +1220,7 @@ One step of a damped spring: pulled toward its rest, slowed by damping, the spee
 
 ### waterlineCut
 
-`waterlineCut(r, e)` in [src/bodies.js](src/bodies.js)
+`waterlineCut(r, e)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 Half the width of the cut a level surface makes through a round part a height from its middle: the half chord.
 
@@ -1234,7 +1234,7 @@ Half the width of the cut a level surface makes through a round part a height fr
 
 ### resampleList
 
-`resampleList(a, n)` in [src/bodies.js](src/bodies.js)
+`resampleList(a, n)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 A list of numbers stretched or squeezed to another length, each new value read in a straight line between the two it falls between.
 
@@ -1248,7 +1248,7 @@ A list of numbers stretched or squeezed to another length, each new value read i
 
 ### twoBoneLimb3d
 
-`twoBoneLimb3d(hx, hy, hz, fx, fy, fz, l1, l2, px, py, pz, ground)` in [src/limbs.js](src/limbs.js)
+`twoBoneLimb3d(hx, hy, hz, fx, fy, fz, l1, l2, px, py, pz, ground)` in [src/creatures/limbs.js](src/creatures/limbs.js)
 
 A two-bone limb in three dimensions: where the knee goes for a foot (pulled in to its reach), bent toward a pole and never below the ground.
 
@@ -1264,7 +1264,7 @@ A two-bone limb in three dimensions: where the knee goes for a foot (pulled in t
 
 ### chamferDistance
 
-`chamferDistance(mask, w, h)` in [src/land.js](src/land.js)
+`chamferDistance(mask, w, h)` in [src/world/land.js](src/world/land.js)
 
 For every cell of a grid not marked zero, how far it is from the nearest that is, a step across costing 3 and a step diagonally 4, in two passes.
 
@@ -1280,7 +1280,7 @@ For every cell of a grid not marked zero, how far it is from the nearest that is
 
 ### gridAStar
 
-`gridAStar(a, b, { free, budget)` in [src/paths.js](src/paths.js)
+`gridAStar(a, b, { free, budget)` in [src/world/paths.js](src/world/paths.js)
 
 A shortest way over a grid of open and blocked cells, eight ways, never cutting a corner past a blocked cell, with a budget of cells to look at.
 
@@ -1295,7 +1295,7 @@ A shortest way over a grid of open and blocked cells, eight ways, never cutting 
 
 ### segmentClear
 
-`segmentClear(x0, y0, x1, y1, step, isFree)` in [src/paths.js](src/paths.js)
+`segmentClear(x0, y0, x1, y1, step, isFree)` in [src/world/paths.js](src/world/paths.js)
 
 Whether a straight line between two points crosses anything: points along it a step apart, each asked whether it is open.
 
@@ -1309,7 +1309,7 @@ Whether a straight line between two points crosses anything: points along it a s
 
 ### straightenPath
 
-`straightenPath(start, points, clear)` in [src/paths.js](src/paths.js)
+`straightenPath(start, points, clear)` in [src/world/paths.js](src/world/paths.js)
 
 A way of grid points made straight where it can be: a point kept only where the line from the last one kept to the next would cross something.
 
@@ -1323,7 +1323,7 @@ A way of grid points made straight where it can be: a point kept only where the 
 
 ### floodFill
 
-`floodFill(start, id, next)` in [src/paths.js](src/paths.js)
+`floodFill(start, id, next)` in [src/world/paths.js](src/world/paths.js)
 
 Everything reachable from a start by steps, each node visited once by its id.
 
@@ -1337,7 +1337,7 @@ Everything reachable from a start by steps, each node visited once by its id.
 
 ### untilSettled
 
-`untilSettled(pass)` in [src/paths.js](src/paths.js)
+`untilSettled(pass)` in [src/world/paths.js](src/world/paths.js)
 
 A set grown until it stops growing: a pass over the rules run again for as long as the last one added anything.
 
@@ -1351,7 +1351,7 @@ A set grown until it stops growing: a pass over the rules run again for as long 
 
 ### obliqueShear
 
-`obliqueShear(m, q, k, camH)` in [src/projection.js](src/projection.js)
+`obliqueShear(m, q, k, camH)` in [src/world/projection.js](src/world/projection.js)
 
 The matrix of an oblique view looking straight down: vertical edges stay vertical and level lines level while depth runs up and across.
 
@@ -1365,7 +1365,7 @@ The matrix of an oblique view looking straight down: vertical edges stay vertica
 
 ### obliqueToScreen
 
-`obliqueToScreen(x, y, h, cx, cy, m)` in [src/projection.js](src/projection.js)
+`obliqueToScreen(x, y, h, cx, cy, m)` in [src/world/projection.js](src/world/projection.js)
 
 Where a point of the ground shows in that oblique view, from the camera's place: across, its offset plus m times its depth; down, its depth less its height.
 
@@ -1379,7 +1379,7 @@ Where a point of the ground shows in that oblique view, from the camera's place:
 
 ### terraceLevel
 
-`terraceLevel(above, step, levels)` in [src/relief.js](src/relief.js)
+`terraceLevel(above, step, levels)` in [src/world/relief.js](src/world/relief.js)
 
 How many terraces stand at a point: its height above the water's cut counted in whole steps, from none to the most.
 
@@ -1396,7 +1396,7 @@ How many terraces stand at a point: its height above the water's cut counted in 
 
 ### footStep
 
-`footStep(phase, stride, lift)` in [src/gait.js](src/gait.js)
+`footStep(phase, stride, lift)` in [src/creatures/gait.js](src/creatures/gait.js)
 
 Where a foot is at a moment of its step: lifted and swinging forward for half of it, planted for the other half.
 
@@ -1419,7 +1419,7 @@ Where a foot is at a moment of its step: lifted and swinging forward for half of
 
 ### strideRate
 
-`strideRate(stride)` in [src/gait.js](src/gait.js)
+`strideRate(stride)` in [src/creatures/gait.js](src/creatures/gait.js)
 
 How far a step's phase turns for each unit the body walks, so a planted foot ends its stance where it landed.
 
@@ -1440,7 +1440,7 @@ How far a step's phase turns for each unit the body walks, so a planted foot end
 
 ### genomeFrom
 
-`genomeFrom(genes, random)` in [src/genes.js](src/genes.js)
+`genomeFrom(genes, random)` in [src/creatures/genes.js](src/creatures/genes.js)
 
 An individual's genes, drawn from the ranges of its kind: no two alike, each clearly its kind.
 
@@ -1463,7 +1463,7 @@ An individual's genes, drawn from the ranges of its kind: no two alike, each cle
 
 ### crossGenomes
 
-`crossGenomes(a, b, genes, random, mutation)` in [src/genes.js](src/genes.js)
+`crossGenomes(a, b, genes, random, mutation)` in [src/creatures/genes.js](src/creatures/genes.js)
 
 A child's genes from two parents of one kind: each number mixed between theirs, each choice one parent's, and now and then a gene that mutates, never leaving its kind.
 
@@ -1489,7 +1489,7 @@ A child's genes from two parents of one kind: each number mixed between theirs, 
 
 ### indexRandom
 
-`indexRandom(i, seed)` in [src/random.js](src/random.js)
+`indexRandom(i, seed)` in [src/core/random.js](src/core/random.js)
 
 A number in [0, 1) for an index and a seed, the same every time.
 
@@ -1510,7 +1510,7 @@ A number in [0, 1) for an index and a seed, the same every time.
 
 ### hueToward
 
-`hueToward(h, to, t)` in [src/colour.js](src/colour.js)
+`hueToward(h, to, t)` in [src/core/colour.js](src/core/colour.js)
 
 A hue moved part of the way toward another, the short way round; far hues only lean.
 
@@ -1529,7 +1529,7 @@ A hue moved part of the way toward another, the short way round; far hues only l
 
 ### gradeColour
 
-`gradeColour(hex, grade, range)` in [src/colour.js](src/colour.js)
+`gradeColour(hex, grade, range)` in [src/core/colour.js](src/core/colour.js)
 
 A colour graded as a film is graded: a range of hues moved, then the whole picture shifted, saturated, lit, contrasted and warmed.
 
@@ -1553,7 +1553,7 @@ A colour graded as a film is graded: a range of hues moved, then the whole pictu
 
 ### dayCycle
 
-`dayCycle(sky, t)` in [src/light.js](src/light.js)
+`dayCycle(sky, t)` in [src/sky/light.js](src/sky/light.js)
 
 The day at a moment: the sky's colours, how much light there is, where the sun and the moon are.
 
@@ -1577,7 +1577,7 @@ The day at a moment: the sky's colours, how much light there is, where the sun a
 
 ### twinkle
 
-`twinkle(t, phase, depth)` in [src/light.js](src/light.js)
+`twinkle(t, phase, depth)` in [src/sky/light.js](src/sky/light.js)
 
 How bright a twinkling star is at a moment: a slow swell and fade at its own phase.
 
@@ -1595,7 +1595,7 @@ How bright a twinkling star is at a moment: a slow swell and fade at its own pha
 
 ### hillLine
 
-`hillLine(x, hill, width, height)` in [src/land.js](src/land.js)
+`hillLine(x, hill, width, height)` in [src/world/land.js](src/world/land.js)
 
 The outline of a line of hills, side-on: noise at four scales, sharpened into peaks or stepped into terraces if asked.
 
@@ -1620,7 +1620,7 @@ The outline of a line of hills, side-on: noise at four scales, sharpened into pe
 
 ### islandHeight
 
-`islandHeight(x, y, size, seed, o)` in [src/land.js](src/land.js)
+`islandHeight(x, y, size, seed, o)` in [src/world/land.js](src/world/land.js)
 
 An island's height at a tile: fractal noise lowered toward the map's edge and lifted toward its middle.
 
@@ -1642,7 +1642,7 @@ An island's height at a tile: fractal noise lowered toward the map's edge and li
 
 ### scatterAlong
 
-`scatterAlong(from, to, every, seed, o)` in [src/scatter.js](src/scatter.js)
+`scatterAlong(from, to, every, seed, o)` in [src/world/scatter.js](src/world/scatter.js)
 
 Things scattered along a line: a slot every so often, kept by chance, nudged within it, with a variant and a size.
 
@@ -1665,7 +1665,7 @@ Things scattered along a line: a slot every so often, kept by chance, nudged wit
 
 ### windowLit
 
-`windowLit(building, row, col, seed, t, share)` in [src/scatter.js](src/scatter.js)
+`windowLit(building, row, col, seed, t, share)` in [src/world/scatter.js](src/world/scatter.js)
 
 Whether a window is lit: a fixed share of windows, a pattern that changes every 25 seconds, each building on its own schedule.
 
@@ -1686,7 +1686,7 @@ Whether a window is lit: a fixed share of windows, a pattern that changes every 
 
 ### blink
 
-`blink(t, rate, phase, threshold)` in [src/scatter.js](src/scatter.js)
+`blink(t, rate, phase, threshold)` in [src/world/scatter.js](src/world/scatter.js)
 
 Whether a blinking light is on: on while a wave at its own rate and phase is above a threshold.
 
@@ -1704,7 +1704,7 @@ Whether a blinking light is on: on while a wave at its own rate and phase is abo
 
 ### faceShade
 
-`faceShade(normal, light)` in [src/projection.js](src/projection.js)
+`faceShade(normal, light)` in [src/world/projection.js](src/world/projection.js)
 
 How much darker a wall is than the ground on top of it, by which way it faces the light.
 
@@ -1722,7 +1722,7 @@ How much darker a wall is than the ground on top of it, by which way it faces th
 
 ### pulseRise
 
-`pulseRise(a, dt, t, o)` in [src/motion.js](src/motion.js)
+`pulseRise(a, dt, t, o)` in [src/creatures/motion.js](src/creatures/motion.js)
 
 Something that rises in pulses (a jelly, a lantern, a spirit) a moment later: pushed up by each pulse, coasting between, swaying.
 
@@ -1740,7 +1740,7 @@ Something that rises in pulses (a jelly, a lantern, a spirit) a moment later: pu
 
 ### fall
 
-`fall(q, dt, o)` in [src/particles.js](src/particles.js)
+`fall(q, dt, o)` in [src/creatures/particles.js](src/creatures/particles.js)
 
 Falling, a moment later (rain, snow, petals, leaves): down at its speed, blown by the wind, fluttering if asked.
 
@@ -1762,7 +1762,7 @@ Falling, a moment later (rain, snow, petals, leaves): down at its speed, blown b
 
 ### rise
 
-`rise(q, dt, o)` in [src/particles.js](src/particles.js)
+`rise(q, dt, o)` in [src/creatures/particles.js](src/creatures/particles.js)
 
 Rising, a moment later (bubbles, embers): up at its speed, each a little faster or slower, wobbling sideways.
 
@@ -1782,7 +1782,7 @@ Rising, a moment later (bubbles, embers): up at its speed, each a little faster 
 
 ### hover
 
-`hover(q, dt, o)` in [src/particles.js](src/particles.js)
+`hover(q, dt, o)` in [src/creatures/particles.js](src/creatures/particles.js)
 
 Hanging in the air, a moment later (dust, plankton, fireflies): wandering in small loops round where it is.
 
@@ -1803,7 +1803,7 @@ Hanging in the air, a moment later (dust, plankton, fireflies): wandering in sma
 
 ### wrapAround
 
-`wrapAround(q, width, height, margin)` in [src/particles.js](src/particles.js)
+`wrapAround(q, width, height, margin)` in [src/creatures/particles.js](src/creatures/particles.js)
 
 A particle that has left the field comes back on the far side, so the field never thins out.
 
@@ -1821,7 +1821,7 @@ A particle that has left the field comes back on the far side, so the field neve
 
 ### swayingChain
 
-`swayingChain(x, y, chain, k, t, i)` in [src/growth.js](src/growth.js)
+`swayingChain(x, y, chain, k, t, i)` in [src/world/growth.js](src/world/growth.js)
 
 A chain swaying from a fixed foot (kelp, a vine, a reed, a banner): a wave runs up it, so the foot is still and the tip swings most.
 
@@ -1846,7 +1846,7 @@ A chain swaying from a fixed foot (kelp, a vine, a reed, a banner): a wave runs 
 
 ### setCanvasMaker
 
-`setCanvasMaker(fn)` in [src/canvas.js](src/canvas.js)
+`setCanvasMaker(fn)` in [src/canvas/canvas.js](src/canvas/canvas.js)
 
 Says how canvases are made: in a browser by itself, in Node by the function it is given.
 
@@ -1864,7 +1864,7 @@ Says how canvases are made: in a browser by itself, in Node by the function it i
 
 ### makeCanvas
 
-`makeCanvas(w, h)` in [src/canvas.js](src/canvas.js)
+`makeCanvas(w, h)` in [src/canvas/canvas.js](src/canvas/canvas.js)
 
 A new canvas, made the way setCanvasMaker said.
 
@@ -1884,7 +1884,7 @@ A new canvas, made the way setCanvasMaker said.
 
 ### partPath
 
-`partPath(g, shape, x, y, w, h, lean)` in [src/drawing.js](src/drawing.js)
+`partPath(g, shape, x, y, w, h, lean)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 The outline of a simple shape (blob, box, spike, tri, gem, dome, stem, disc, ring), standing on a point.
 
@@ -1903,7 +1903,7 @@ The outline of a simple shape (blob, box, spike, tri, gem, dome, stem, disc, rin
 
 ### fillInArt
 
-`fillInArt(g, c, x, y, w, h, art)` in [src/drawing.js](src/drawing.js)
+`fillInArt(g, c, x, y, w, h, art)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 Fills a shape in an art style: flat, gradient, facet (split hard, like cut stone) or glowing, with a paper shadow and an outline if asked.
 
@@ -1925,7 +1925,7 @@ Fills a shape in an art style: flat, gradient, facet (split hard, like cut stone
 
 ### drawRecipe
 
-`drawRecipe(g, recipe, x, y, k, random, colourOf, art)` in [src/drawing.js](src/drawing.js)
+`drawRecipe(g, recipe, x, y, k, random, colourOf, art)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 Draws a recipe: a few simple shapes in their colours and the art's style, some repeated and scattered, each repeat a little different.
 
@@ -1946,7 +1946,7 @@ Draws a recipe: a few simple shapes in their colours and the art's style, some r
 
 ### glowSprite
 
-`glowSprite(c)` in [src/drawing.js](src/drawing.js)
+`glowSprite(c)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 A small soft glow in a colour, drawn once and kept, to stamp wherever something glows.
 
@@ -1966,7 +1966,7 @@ A small soft glow in a colour, drawn once and kept, to stamp wherever something 
 
 ### glowingDisc
 
-`glowingDisc(g, x, y, r, c, glow)` in [src/drawing.js](src/drawing.js)
+`glowingDisc(g, x, y, r, c, glow)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 A glowing disc (the sun, the moon, a lamp): a soft halo four and a half times its size, and the disc.
 
@@ -1986,7 +1986,7 @@ A glowing disc (the sun, the moon, a lamp): a soft halo four and a half times it
 
 ### lightRays
 
-`lightRays(g, w, h, o)` in [src/drawing.js](src/drawing.js)
+`lightRays(g, w, h, o)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 Light rays from above (sunbeams through cloud, light through water): slanting shafts fading downward, added onto the picture.
 
@@ -2006,7 +2006,7 @@ Light rays from above (sunbeams through cloud, light through water): slanting sh
 
 ### fogBands
 
-`fogBands(g, w, h, o)` in [src/drawing.js](src/drawing.js)
+`fogBands(g, w, h, o)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 Fog lying in a band of the picture: three soft layers, thickest in their middles.
 
@@ -2026,7 +2026,7 @@ Fog lying in a band of the picture: three soft layers, thickest in their middles
 
 ### puffCloud
 
-`puffCloud(g, x, y, s, i, o)` in [src/drawing.js](src/drawing.js)
+`puffCloud(g, x, y, s, i, o)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 A cloud of six round puffs along a gentle arch, with a soft shadow below and to the right.
 
@@ -2046,7 +2046,7 @@ A cloud of six round puffs along a gentle arch, with a soft shadow below and to 
 
 ### inkedLine
 
-`inkedLine(g, lineAt, w, h, o)` in [src/drawing.js](src/drawing.js)
+`inkedLine(g, lineAt, w, h, o)` in [src/canvas/drawing.js](src/canvas/drawing.js)
 
 A line of land inked, the way comics ink it: a dark line, and light hatching under it that travels with the land.
 
@@ -2066,7 +2066,7 @@ A line of land inked, the way comics ink it: a dark line, and light hatching und
 
 ### tones
 
-`tones(c)` in [src/parts.js](src/parts.js)
+`tones(c)` in [src/canvas/parts.js](src/canvas/parts.js)
 
 A colour's tones for soft shading: a dark leaning blue-violet, the colour, a light leaning warm cream, and a deep line colour.
 
@@ -2086,7 +2086,7 @@ A colour's tones for soft shading: a dark leaning blue-violet, the colour, a lig
 
 ### drawParts
 
-`drawParts(g, parts, k, o)` in [src/parts.js](src/parts.js)
+`drawParts(g, parts, k, o)` in [src/canvas/parts.js](src/canvas/parts.js)
 
 A figure of simple parts drawn as a hand-drawn sprite is: a ground shadow, one outline round everything, each part soft-shaded in three tones.
 
@@ -2109,7 +2109,7 @@ A figure of simple parts drawn as a hand-drawn sprite is: a ground shadow, one o
 
 ### seedOf
 
-`seedOf(value)` in [src/seeds.js](src/seeds.js)
+`seedOf(value)` in [src/core/seeds.js](src/core/seeds.js)
 
 The seed a value stands for: a number is itself, words are hashed to a number from 1 to 99,999.
 
@@ -2131,7 +2131,7 @@ The seed a value stands for: a number is itself, words are hashed to a number fr
 
 ### seedWords
 
-`seedWords(first, second, random)` in [src/seeds.js](src/seeds.js)
+`seedWords(first, second, random)` in [src/core/seeds.js](src/core/seeds.js)
 
 A new seed as words: a word from each of two lists and a number from 1 to 99, joined by hyphens.
 
@@ -2152,7 +2152,7 @@ A new seed as words: a word from each of two lists and a number from 1 to 99, jo
 
 ### tracePart
 
-`tracePart(g, part, k, grow)` in [src/parts.js](src/parts.js)
+`tracePart(g, part, k, grow)` in [src/canvas/parts.js](src/canvas/parts.js)
 
 A figure part's outline added to the path being built, grown or shrunk if asked.
 
@@ -2172,7 +2172,7 @@ A figure part's outline added to the path being built, grown or shrunk if asked.
 
 ### partOutline
 
-`partOutline(part, k, grow)` in [src/parts.js](src/parts.js)
+`partOutline(part, k, grow)` in [src/canvas/parts.js](src/canvas/parts.js)
 
 A figure part's outline as path commands (data): an ellipse, a tapered limb, a polygon, or a body's ellipses together.
 
@@ -2190,7 +2190,7 @@ A figure part's outline as path commands (data): an ellipse, a tapered limb, a p
 
 ### hueShiftTone
 
-`hueShiftTone(c, k)` in [src/pixels.js](src/pixels.js)
+`hueShiftTone(c, k)` in [src/pixels/pixels.js](src/pixels/pixels.js)
 
 A pixel artist's shade of a colour: darker turns toward blue-violet and richer, lighter toward warm yellow and paler.
 
@@ -2212,7 +2212,7 @@ A pixel artist's shade of a colour: darker turns toward blue-violet and richer, 
 
 ### ditheredBorder
 
-`ditheredBorder(f, x, y, n)` in [src/pixels.js](src/pixels.js)
+`ditheredBorder(f, x, y, n)` in [src/pixels/pixels.js](src/pixels/pixels.js)
 
 Whether a pixel near the border of two regions belongs to the other: its share there set against the Bayer pattern, with a little noise.
 
@@ -2233,7 +2233,7 @@ Whether a pixel near the border of two regions belongs to the other: its share t
 
 ### levelCut
 
-`levelCut(level)` in [src/land.js](src/land.js)
+`levelCut(level)` in [src/world/land.js](src/world/land.js)
 
 The height that a given share of a land made from fractal noise lies below, so water can be set by how much of the land it covers.
 
@@ -2255,7 +2255,7 @@ The height that a given share of a land made from fractal noise lies below, so w
 
 ### wanderingHeading
 
-`wanderingHeading(a, s, seed, bias, turn)` in [src/land.js](src/land.js)
+`wanderingHeading(a, s, seed, bias, turn)` in [src/world/land.js](src/world/land.js)
 
 The next heading of a path that wanders by itself: toward a heading that drifts with noise along its length, turning no more than a set amount a step.
 
@@ -2276,7 +2276,7 @@ The next heading of a path that wanders by itself: toward a heading that drifts 
 
 ### waterTime
 
-`waterTime(t, tq)` in [src/water.js](src/water.js)
+`waterTime(t, tq)` in [src/world/water.js](src/world/water.js)
 
 The water's clock at a moment: the whole-pixel offsets its swells, ripples and glints have drifted to, worked out once for every pixel.
 
@@ -2294,7 +2294,7 @@ The water's clock at a moment: the whole-pixel offsets its swells, ripples and g
 
 ### waterPixel
 
-`waterPixel(wx, wy, d, near, sh, T, wob, P)` in [src/water.js](src/water.js)
+`waterPixel(wx, wy, d, near, sh, T, wob, P)` in [src/world/water.js](src/world/water.js)
 
 One pixel of water seen from above: foam lapping a beach, deeper darker, swells and ripples, glints on the crests, sand in the shallows, weed on the bed.
 
@@ -2317,7 +2317,7 @@ One pixel of water seen from above: foam lapping a beach, deeper darker, swells 
 
 ### fillBetweenEdges
 
-`fillBetweenEdges(grid, y0, y1, edge, near, far)` in [src/sprites.js](src/sprites.js)
+`fillBetweenEdges(grid, y0, y1, edge, near, far)` in [src/pixels/sprites.js](src/pixels/sprites.js)
 
 Rows of a letter grid filled across between their outermost drawn letters, the ends in one letter and each half in its own.
 
@@ -2335,7 +2335,7 @@ Rows of a letter grid filled across between their outermost drawn letters, the e
 
 ### leafCrown
 
-`leafCrown(r, rng, cx, cy, rx, ry, leaf, o)` in [src/sprites.js](src/sprites.js)
+`leafCrown(r, rng, cx, cy, rx, ry, leaf, o)` in [src/pixels/sprites.js](src/pixels/sprites.js)
 
 A crown of leaves in a pixel buffer: round clumps scattered about a middle, each pixel shaded by its nearest clump and by the crown as a whole, in four steps.
 
@@ -2356,7 +2356,7 @@ A crown of leaves in a pixel buffer: round clumps scattered about a middle, each
 
 ### barkTrunk
 
-`barkTrunk(r, x, yTop, yBase, w, bark, lean)` in [src/sprites.js](src/sprites.js)
+`barkTrunk(r, x, yTop, yBase, w, bark, lean)` in [src/pixels/sprites.js](src/pixels/sprites.js)
 
 A tree's trunk in a pixel buffer: a column from top to foot, leaning at the top, a pixel wider near the foot, lit down its left side.
 
@@ -2374,7 +2374,7 @@ A tree's trunk in a pixel buffer: a column from top to foot, leaning at the top,
 
 ### followJoint
 
-`followJoint(lx, ly, px, py, length, back, maxBend)` in [src/bodies.js](src/bodies.js)
+`followJoint(lx, ly, px, py, length, back, maxBend)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 Where a point of a chain goes when the point before it has moved: back toward where it was at its set distance, turned no more than a set angle from the way the chain runs.
 
@@ -2395,7 +2395,7 @@ Where a point of a chain goes when the point before it has moved: back toward wh
 
 ### footSwing
 
-`footSwing(sx, sy, tx, ty, t, lift)` in [src/bodies.js](src/bodies.js)
+`footSwing(sx, sy, tx, ty, t, lift)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 Where a foot is during its step: from where it lifted to where it lands, eased at both ends, raised in an arc highest half way.
 
@@ -2416,7 +2416,7 @@ Where a foot is during its step: from where it lifted to where it lands, eased a
 
 ### footReady
 
-`footReady(d, stride, speed, unit, stepping, group)` in [src/bodies.js](src/bodies.js)
+`footReady(d, stride, speed, unit, stepping, group)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 Whether a planted foot steps now: once the body has left it half a stride behind (or a little, standing nearly still), and only while the other group of feet is down unless it is left almost a stride behind.
 
@@ -2435,7 +2435,7 @@ Whether a planted foot steps now: once the body has left it half a stride behind
 
 ### floatHeight
 
-`floatHeight(i, partR, headR, neck, tailAt, bird, t, unit)` in [src/bodies.js](src/bodies.js)
+`floatHeight(i, partR, headR, neck, tailAt, bird, t, unit)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 How high a part of a floating body rides: head held up, neck parts a little under, the middle low, the tail just under the surface, a bird high on it, with a slow swell along the body.
 
@@ -2454,7 +2454,7 @@ How high a part of a floating body rides: head held up, neck parts a little unde
 
 ### depthUnderCut
 
-`depthUnderCut(x, y, cx, wl, cut)` in [src/bodies.js](src/bodies.js)
+`depthUnderCut(x, y, cx, wl, cut)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 How far a pixel of a round part is under a level surface, seen from above and in front: the surface cuts along the front of the part's ring, lowest in the middle of the cut.
 
@@ -2474,7 +2474,7 @@ How far a pixel of a round part is under a level surface, seen from above and in
 
 ### despeckle
 
-`despeckle(px, stride, rows, w, h)` in [src/bodies.js](src/bodies.js)
+`despeckle(px, stride, rows, w, h)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 A lone pixel whose four neighbours are mostly one other colour takes that colour, read from a copy so changes do not cascade.
 
@@ -2492,7 +2492,7 @@ A lone pixel whose four neighbours are mostly one other colour takes that colour
 
 ### staggeredScales
 
-`staggeredScales(px, stride, w, h, ox, oy, a, aLo, b, bLo)` in [src/bodies.js](src/bodies.js)
+`staggeredScales(px, stride, w, h, ox, oy, a, aLo, b, bLo)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 Scales on a sprite: on every other row, every third pixel of two colours turns to its darker shade, rows staggered, anchored to the body.
 
@@ -2510,7 +2510,7 @@ Scales on a sprite: on every other row, every third pixel of two colours turns t
 
 ### topEdgeShine
 
-`topEdgeShine(px, stride, w, h)` in [src/bodies.js](src/bodies.js)
+`topEdgeShine(px, stride, w, h)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 A shine along the top edge of the left part of a sprite: a column's top pixel, if it has a pixel under it, turns a lighter shade.
 
@@ -2531,7 +2531,7 @@ A shine along the top edge of the left part of a sprite: a column's top pixel, i
 
 ### furTufts
 
-`furTufts(px, stride, w, h, ox, line, hx, hr)` in [src/bodies.js](src/bodies.js)
+`furTufts(px, stride, w, h, ox, line, hx, hr)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 Fur along a sprite's back: in every third column the outline lifts a pixel where it is the top edge, not on the face.
 
@@ -2549,7 +2549,7 @@ Fur along a sprite's back: in every third column the outline lifts a pixel where
 
 ### rimDetail
 
-`rimDetail(px, stride, w, h, ox, oy, fine, o)` in [src/bodies.js](src/bodies.js)
+`rimDetail(px, stride, w, h, ox, oy, fine, o)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 The detail a sprite drawn finer can hold, levels 2 to 4: a lit top rim and a shaded underside, fur strokes and scale highlights, then denser and speckled.
 
@@ -2570,7 +2570,7 @@ The detail a sprite drawn finer can hold, levels 2 to 4: a lit top rim and a sha
 
 ### smoothCurve
 
-`smoothCurve(n, pts)` in [src/bodies.js](src/bodies.js)
+`smoothCurve(n, pts)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 N values along a body from a few given places, each eased between the two it falls between.
 
@@ -2590,7 +2590,7 @@ N values along a body from a few given places, each eased between the two it fal
 
 ### bodySpots
 
-`bodySpots(random, from, to, count)` in [src/bodies.js](src/bodies.js)
+`bodySpots(random, from, to, count)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 Spots along a body: each on a part in a range, off its middle a little, of a size, in the main colour or the second.
 
@@ -2608,7 +2608,7 @@ Spots along a body: each on a part in a range, off its middle a little, of a siz
 
 ### bodyPattern
 
-`bodyPattern(random, n, kinds, 'bands', 'saddle', 'tip', 'back'])` in [src/bodies.js](src/bodies.js)
+`bodyPattern(random, n, kinds, 'bands', 'saddle', 'tip', 'back'])` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 A body's pattern picked from the kinds allowed: none, bands, a saddle over the back, a tail tip, or the back only.
 
@@ -2626,7 +2626,7 @@ A body's pattern picked from the kinds allowed: none, bands, a saddle over the b
 
 ### coatColours
 
-`coatColours(random, o, d)` in [src/bodies.js](src/bodies.js)
+`coatColours(random, o, d)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 A coat's three packed colours: a back near a hue, a paler less saturated belly, an accent turned round the colour wheel.
 
@@ -2647,7 +2647,7 @@ A coat's three packed colours: a back near a hue, a paler less saturated belly, 
 
 ### blendRecords
 
-`blendRecords(a, b, t, grows)` in [src/bodies.js](src/bodies.js)
+`blendRecords(a, b, t, grows)` in [src/creatures/bodies.js](src/creatures/bodies.js)
 
 Two records mixed: numbers between, other values the nearer side's, records within records the same way; one only one side has fades out by its sizes.
 
@@ -2667,7 +2667,7 @@ Two records mixed: numbers between, other values the nearer side's, records with
 
 ### cloudShadows
 
-`cloudShadows(px, w, h, o)` in [src/weather.js](src/weather.js)
+`cloudShadows(px, w, h, o)` in [src/sky/weather.js](src/sky/weather.js)
 
 The shadows of clouds over a frame seen from above: a bent fractal noise read on a coarse grid and smoothed between, darkening the land where it is high.
 
@@ -2690,7 +2690,7 @@ The shadows of clouds over a frame seen from above: a bent fractal noise read on
 
 ### fogBanks
 
-`fogBanks(px, w, h, o)` in [src/weather.js](src/weather.js)
+`fogBanks(px, w, h, o)` in [src/sky/weather.js](src/sky/weather.js)
 
 Banks of fog over a frame: a slow bent fractal noise says where it is thick or thin; thick fog laid over the land, middling fog in an ordered dither, thin fog as a faint veil.
 
@@ -2712,7 +2712,7 @@ Banks of fog over a frame: a slow bent fractal noise says where it is thick or t
 
 ### frontStrength
 
-`frontStrength(t, dur)` in [src/weather.js](src/weather.js)
+`frontStrength(t, dur)` in [src/sky/weather.js](src/sky/weather.js)
 
 How strong a passing front of rain or snow is at a moment: building over its first seconds, full through its middle, easing off at its end.
 
@@ -2732,7 +2732,7 @@ How strong a passing front of rain or snow is at a moment: building over its fir
 
 ### lightningFlash
 
-`lightningFlash(px, left)` in [src/weather.js](src/weather.js)
+`lightningFlash(px, left)` in [src/sky/weather.js](src/sky/weather.js)
 
 The whole frame lit for an instant, twice, as a flash flickers: full, dark, full again, then faintly as it fades, each channel drawn toward a cold white.
 
@@ -2751,7 +2751,7 @@ The whole frame lit for an instant, twice, as a flash flickers: full, dark, full
 
 ### hourLight
 
-`hourLight(tod, dim, wet)` in [src/light.js](src/light.js)
+`hourLight(tod, dim, wet)` in [src/sky/light.js](src/sky/light.js)
 
 The hour's light as how much it is night, how much it is the low light of dusk or dawn, whether it is morning, and a key that says when its colour tables must be made again.
 
@@ -2771,7 +2771,7 @@ The hour's light as how much it is night, how much it is the low light of dusk o
 
 ### hourTables
 
-`hourTables(night, dusk, morning, dim, wet)` in [src/light.js](src/light.js)
+`hourTables(night, dusk, morning, dim, wet)` in [src/sky/light.js](src/sky/light.js)
 
 The hour as three colour tables, one a channel: night sinking to a deep blue, evening warming the lights a little and lifting the shadows into violet, dawn cooler and paler.
 
@@ -2793,7 +2793,7 @@ The hour as three colour tables, one a channel: night sinking to a deep blue, ev
 
 ### gradeFrame
 
-`gradeFrame(px, w, h, T, o)` in [src/light.js](src/light.js)
+`gradeFrame(px, w, h, T, o)` in [src/sky/light.js](src/sky/light.js)
 
 A frame graded by the hour's tables, with lamps holding off the dark round themselves in steps, dithered at their edges.
 
@@ -2814,7 +2814,7 @@ A frame graded by the hour's tables, with lamps holding off the dark round thems
 
 ### fleeVector
 
-`fleeVector(x, y, threats)` in [src/motion.js](src/motion.js)
+`fleeVector(x, y, threats)` in [src/creatures/motion.js](src/creatures/motion.js)
 
 Which way to run from threats: each threat in its reach pushes away from itself, harder the nearer it is, the pushes added, and how long the fear lasts.
 
@@ -2832,7 +2832,7 @@ Which way to run from threats: each threat in its reach pushes away from itself,
 
 ### formationSlot
 
-`formationSlot(kind, lx, ly, la, slot)` in [src/motion.js](src/motion.js)
+`formationSlot(kind, lx, ly, la, slot)` in [src/creatures/motion.js](src/creatures/motion.js)
 
 A follower's place beside its leader: round it in a loose flock, trailing behind it in a school, or in a V behind it.
 
@@ -2851,7 +2851,7 @@ A follower's place beside its leader: round it in a loose flock, trailing behind
 
 ### wobbledRing
 
-`wobbledRing(x, y, cx, cy, r, seed)` in [src/land.js](src/land.js)
+`wobbledRing(x, y, cx, cy, r, seed)` in [src/world/land.js](src/world/land.js)
 
 How far a point is past the edge of a round world whose edge is pushed in and out by a broad and a fine noise.
 
@@ -2871,7 +2871,7 @@ How far a point is past the edge of a round world whose edge is pushed in and ou
 
 ### mountainRise
 
-`mountainRise(past, x, y, seed)` in [src/land.js](src/land.js)
+`mountainRise(past, x, y, seed)` in [src/world/land.js](src/world/land.js)
 
 How high a mountain wall stands at a point past a world's edge: rising from just inside it to full height further out, broken by ridged noise.
 
@@ -2891,7 +2891,7 @@ How high a mountain wall stands at a point past a world's edge: rising from just
 
 ### windingRiver
 
-`windingRiver(x, y, seed, level)` in [src/land.js](src/land.js)
+`windingRiver(x, y, seed, level)` in [src/world/land.js](src/world/land.js)
 
 A river that winds across a land: where a slow fractal noise crosses its middle value, one unbroken winding line, as wide as its level asks.
 
@@ -2911,7 +2911,7 @@ A river that winds across a land: where a slow fractal noise crosses its middle 
 
 ### plotGrid
 
-`plotGrid(x, y, size, angle)` in [src/land.js](src/land.js)
+`plotGrid(x, y, size, angle)` in [src/world/land.js](src/world/land.js)
 
 Plots in a grid laid at an angle, such as paddy fields or salt pans: which plot a point is in, and how far it is from that plot's nearest edge.
 
@@ -2929,7 +2929,7 @@ Plots in a grid laid at an angle, such as paddy fields or salt pans: which plot 
 
 ### nearestFreeCell
 
-`nearestFreeCell(cx, cy, free, r)` in [src/paths.js](src/paths.js)
+`nearestFreeCell(cx, cy, free, r)` in [src/world/paths.js](src/world/paths.js)
 
 The open cell nearest a cell: itself if open, else the first open one on rings drawn outward.
 
@@ -2947,7 +2947,7 @@ The open cell nearest a cell: itself if open, else the first open one on rings d
 
 ### roofPlan
 
-`roofPlan(kind, w, d, eave, cx, by)` in [src/roofs.js](src/roofs.js)
+`roofPlan(kind, w, d, eave, cx, by)` in [src/world/roofs.js](src/world/roofs.js)
 
 A gable or hip roof seen from above, from its foot: the eaves' rectangle, the ridge's row a little above the middle (three tenths back from the north eave), and how far a hip roof's ends slope in.
 
@@ -2965,7 +2965,7 @@ A gable or hip roof seen from above, from its foot: the eaves' rectangle, the ri
 
 ### slopeShade
 
-`slopeShade(y, yR, yS)` in [src/roofs.js](src/roofs.js)
+`slopeShade(y, yR, yS)` in [src/world/roofs.js](src/world/roofs.js)
 
 How a roof's near slope shades at a row: dark along the eave, lit just under the ridge, else its own colour.
 
@@ -2985,7 +2985,7 @@ How a roof's near slope shades at a row: dark along the eave, lit just under the
 
 ### roofTexel
 
-`roofTexel(style, x, y, x0, y0)` in [src/roofs.js](src/roofs.js)
+`roofTexel(style, x, y, x0, y0)` in [src/world/roofs.js](src/world/roofs.js)
 
 A roof covering's texture at a pixel: tiles in staggered rows (or in mortar), thatch in ragged layers, boards with nails, lacquered boards, each as a word the caller colours.
 
@@ -3004,7 +3004,7 @@ A roof covering's texture at a pixel: tiles in staggered rows (or in mortar), th
 
 ### obliqueToGround
 
-`obliqueToGround(X, Y, cx, cy, m, heightAt)` in [src/projection.js](src/projection.js)
+`obliqueToGround(X, Y, cx, cy, m, heightAt)` in [src/world/projection.js](src/world/projection.js)
 
 The point of the ground under a place in the oblique view: worked out as if the ground were flat, then once more at the height found there.
 
@@ -3024,7 +3024,7 @@ The point of the ground under a place in the oblique view: worked out as if the 
 
 ### wallShade
 
-`wallShade(kind, x, y)` in [src/relief.js](src/relief.js)
+`wallShade(kind, x, y)` in [src/world/relief.js](src/world/relief.js)
 
 A wall's lightness at a texel of a 16-pixel tile by its stuff: a lit top edge, then stone in courses with mortar, earth in bands with grit, snow in drifts, sand with grains.
 
@@ -3042,7 +3042,7 @@ A wall's lightness at a texel of a 16-pixel tile by its stuff: a lit top edge, t
 
 ### leafShade
 
-`leafShade(x, y)` in [src/relief.js](src/relief.js)
+`leafShade(x, y)` in [src/world/relief.js](src/world/relief.js)
 
 Leaves' lightness at a texel: light ones in small heaps, a few dark gaps between, the rest a little uneven.
 
@@ -3060,7 +3060,7 @@ Leaves' lightness at a texel: light ones in small heaps, a few dark gaps between
 
 ### crownRows
 
-`crownRows(s)` in [src/relief.js](src/relief.js)
+`crownRows(s)` in [src/world/relief.js](src/world/relief.js)
 
 A tree sprite's crown: its rows above the trunk (the narrow part going up from the foot), each row's opaque span.
 
@@ -3078,7 +3078,7 @@ A tree sprite's crown: its rows above the trunk (the narrow part going up from t
 
 ### silhouetteNormals
 
-`silhouetteNormals(s, kind)` in [src/relief.js](src/relief.js)
+`silhouetteNormals(s, kind)` in [src/world/relief.js](src/world/relief.js)
 
 A normal map made from a sprite's own silhouette: a crown as a ball lit from the upper left, its drawn clumps raised and sunk; a trunk round; a lump as a dome; anything else a card turned a little up.
 
@@ -3098,7 +3098,7 @@ A normal map made from a sprite's own silhouette: a crown as a ball lit from the
 
 ### crownClumps
 
-`crownClumps(s, crown, m)` in [src/relief.js](src/relief.js)
+`crownClumps(s, crown, m)` in [src/world/relief.js](src/world/relief.js)
 
 A tree's crown as clumps: small balls of leaves through the crown's own shape (each row turned round the trunk, flattened front to back), each coloured from the sprite pixel it covers in the oblique view, plus a dark heart.
 

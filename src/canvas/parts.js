@@ -1,7 +1,7 @@
 // Parts: a figure drawn as a list of simple parts (ellipses, tapered limbs, polygons, strokes, eyes), each soft-shaded
 // in three tones and the whole outlined once, the way a hand-drawn sprite is. Parts are plain records in figure space
 // (x forward, y up from the ground), with a z (far parts first) and a tone (a name the caller's colours know).
-import { rgba, mixColour, shade } from './colour.js';
+import { rgba, mixColour, shade } from '../core/colour.js';
 
 const TAU = Math.PI * 2;
 const COOL = [46, 42, 92],

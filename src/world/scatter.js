@@ -1,7 +1,7 @@
 // Scattering: where things go when they are placed by number, not by hand (trees along a hillside, buildings along a
 // street, lit windows in them), the same every time for the same seed and never all in a row.
-import { lerp } from './numbers.js';
-import { indexRandom } from './random.js';
+import { lerp } from '../core/numbers.js';
+import { indexRandom } from '../core/random.js';
 
 /**
  * Things scattered along a stretch of a line: one slot every so often, each kept or skipped by chance, nudged

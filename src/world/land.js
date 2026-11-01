@@ -1,7 +1,7 @@
 // Land: the outline of hills seen side-on, and an island's height seen from above, both from noise; and land seen from
 // above made by rules on noise: lower is water, a little higher the shore, higher the ground; a path that wanders.
-import { clamp, lerp, angleDiff } from './numbers.js';
-import { noiseLine, fractalNoise, valueNoise, ridgedNoise } from './noise.js';
+import { clamp, lerp, angleDiff } from '../core/numbers.js';
+import { noiseLine, fractalNoise, valueNoise, ridgedNoise } from '../core/noise.js';
 
 /**
  * The height of a line of hills at a point, seen side-on: noise along the line at four scales, sharpened into peaks

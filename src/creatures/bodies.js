@@ -3,8 +3,8 @@
 // water and where the water's surface cuts it, the finishing passes a small sprite of it gets (specks tidied, scales,
 // a shine, fur, a lit rim), and the helpers its genome is made and blended with (a smooth curve along its length,
 // spots, a pattern, a coat, a list resampled, two records mixed).
-import { clamp, lerp, angleDiff } from './numbers.js';
-import { hueShiftTone, packedHsl } from './pixels.js';
+import { clamp, lerp, angleDiff } from '../core/numbers.js';
+import { hueShiftTone, packedHsl } from '../pixels/pixels.js';
 
 /**
  * Where a point of a chain goes when the point before it has moved: straight back toward where it was, at its set

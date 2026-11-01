@@ -1,8 +1,8 @@
 // procedural-almanac: every technique, one import. What each one is, where it comes from and how it is tested:
 // CATALOG.md.
-export { clamp, lerp, smoothstep, wrap, angleDiff } from './numbers.js';
-export { hash32, fnv1a, hashString, indexRandom, SeededRandom, latticeHash, linearCongruential } from './random.js';
-export { latticeRandom, valueNoise, fractalNoise, ridgedNoise, noiseLine, noiseTile } from './noise.js';
+export { clamp, lerp, smoothstep, wrap, angleDiff } from './core/numbers.js';
+export { hash32, fnv1a, hashString, indexRandom, SeededRandom, latticeHash, linearCongruential } from './core/random.js';
+export { latticeRandom, valueNoise, fractalNoise, ridgedNoise, noiseLine, noiseTile } from './core/noise.js';
 export {
   packRgb,
   mixPacked,
@@ -12,8 +12,8 @@ export {
   bayerThreshold,
   ditheredBorder,
   scalePacked,
-} from './pixels.js';
-export { waterTime, waterPixel } from './water.js';
+} from './pixels/pixels.js';
+export { waterTime, waterPixel } from './world/water.js';
 export {
   hexToRgb,
   rgbToHex,
@@ -25,8 +25,8 @@ export {
   hslToRgb,
   hueToward,
   gradeColour,
-} from './colour.js';
-export { dayCycle, aerialPerspective, twinkle, hourLight, hourTables, gradeFrame } from './light.js';
+} from './core/colour.js';
+export { dayCycle, aerialPerspective, twinkle, hourLight, hourTables, gradeFrame } from './sky/light.js';
 export {
   hillLine,
   islandHeight,
@@ -38,8 +38,8 @@ export {
   mountainRise,
   windingRiver,
   plotGrid,
-} from './land.js';
-export { scatterAlong, windowLit, blink } from './scatter.js';
+} from './world/land.js';
+export { scatterAlong, windowLit, blink } from './world/scatter.js';
 export {
   parallax,
   turnedProjection,
@@ -48,11 +48,11 @@ export {
   obliqueShear,
   obliqueToScreen,
   obliqueToGround,
-} from './projection.js';
-export { flockStep, gridWalk, pulseRise, fleeVector, formationSlot } from './motion.js';
-export { particleField, fall, rise, hover, wrapAround } from './particles.js';
-export { branchingTree, swayingChain } from './growth.js';
-export { setCanvasMaker, makeCanvas, stampCache } from './canvas.js';
+} from './world/projection.js';
+export { flockStep, gridWalk, pulseRise, fleeVector, formationSlot } from './creatures/motion.js';
+export { particleField, fall, rise, hover, wrapAround } from './creatures/particles.js';
+export { branchingTree, swayingChain } from './world/growth.js';
+export { setCanvasMaker, makeCanvas, stampCache } from './canvas/canvas.js';
 export {
   partPath,
   fillInArt,
@@ -66,13 +66,13 @@ export {
   mirrorBelow,
   puffCloud,
   inkedLine,
-} from './drawing.js';
-export { tones, drawParts, tracePart, partOutline } from './parts.js';
-export { drawList } from './display.js';
-export { twoBoneLimb, twoBoneLimb3d } from './limbs.js';
-export { footStep, strideRate, gaitTiming } from './gait.js';
-export { genomeFrom, crossGenomes } from './genes.js';
-export { seedOf, seedWords } from './seeds.js';
+} from './canvas/drawing.js';
+export { tones, drawParts, tracePart, partOutline } from './canvas/parts.js';
+export { drawList } from './canvas/display.js';
+export { twoBoneLimb, twoBoneLimb3d } from './creatures/limbs.js';
+export { footStep, strideRate, gaitTiming } from './creatures/gait.js';
+export { genomeFrom, crossGenomes } from './creatures/genes.js';
+export { seedOf, seedWords } from './core/seeds.js';
 export {
   ellipseRows,
   fillEllipse,
@@ -86,7 +86,7 @@ export {
   outlinePass,
   cutSprite,
   drawnBounds,
-} from './raster.js';
+} from './pixels/raster.js';
 export {
   outlineSprite,
   spriteFromRows,
@@ -96,7 +96,7 @@ export {
   packSheet,
   leafCrown,
   barkTrunk,
-} from './sprites.js';
+} from './pixels/sprites.js';
 export {
   followJoint,
   dampedSpring,
@@ -116,8 +116,8 @@ export {
   coatColours,
   resampleList,
   blendRecords,
-} from './bodies.js';
-export { cloudShadows, fogBanks, frontStrength, lightningFlash } from './weather.js';
-export { gridAStar, nearestFreeCell, segmentClear, straightenPath, floodFill, untilSettled } from './paths.js';
-export { roofPlan, slopeShade, roofTexel } from './roofs.js';
-export { terraceLevel, wallShade, leafShade, crownRows, silhouetteNormals, crownClumps } from './relief.js';
+} from './creatures/bodies.js';
+export { cloudShadows, fogBanks, frontStrength, lightningFlash } from './sky/weather.js';
+export { gridAStar, nearestFreeCell, segmentClear, straightenPath, floodFill, untilSettled } from './world/paths.js';
+export { roofPlan, slopeShade, roofTexel } from './world/roofs.js';
+export { terraceLevel, wallShade, leafShade, crownRows, silhouetteNormals, crownClumps } from './world/relief.js';

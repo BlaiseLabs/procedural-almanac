@@ -5,6 +5,10 @@ and versions follow [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+
+- `src/` is now six folders (`core`, `pixels`, `canvas`, `world`, `sky`, `creatures`) instead of 28 modules side by side. Importing from `procedural-almanac` works as before.
+
 ### Added
 
 - `projection`: `obliqueShear`, `obliqueToScreen`, `obliqueToGround`; `relief` (new): `terraceLevel`, `wallShade`,

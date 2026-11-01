@@ -1,9 +1,9 @@
 // Drawing on a canvas: simple shapes in an art style, and what lies over a whole picture (light rays, fog, a mirror
 // of wet ground, grain, a vignette) or in it (a glowing sun, a cloud, an inked line of hills). Each draws on the 2D
 // context it is given and changes nothing else.
-import { clamp, wrap } from './numbers.js';
-import { rgba, mixColour, shade } from './colour.js';
-import { indexRandom } from './random.js';
+import { clamp, wrap } from '../core/numbers.js';
+import { rgba, mixColour, shade } from '../core/colour.js';
+import { indexRandom } from '../core/random.js';
 import { makeCanvas } from './canvas.js';
 
 const TAU = Math.PI * 2;

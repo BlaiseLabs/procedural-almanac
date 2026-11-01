@@ -1,9 +1,9 @@
 // Weather over a picture seen from above: the shadows of clouds drifting over the land, banks of fog, how strong a
 // passing front is at a moment, and lightning lighting everything for an instant. Each works on a frame of packed
 // pixels (an ImageData's 32-bit words, 0xAABBGGRR) in place.
-import { smoothstep } from './numbers.js';
-import { fractalNoise } from './noise.js';
-import { mixPacked } from './pixels.js';
+import { smoothstep } from '../core/numbers.js';
+import { fractalNoise } from '../core/noise.js';
+import { mixPacked } from '../pixels/pixels.js';
 
 const C = 8; // the coarse grid the slow fields are read on, in pixels
 // a channel darkened in the shadow of a cloud: red and green to 82%, blue to 90% (a shadow is a little blue)

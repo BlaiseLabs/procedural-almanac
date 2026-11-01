@@ -5,10 +5,16 @@ import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 const root = new URL('../', import.meta.url).pathname;
 const read = (f) => JSON.parse(readFileSync(root + f, 'utf8'));
 
+// every source file, as a path under src/: index.js, and the modules one folder down (core/numbers.js)
+export const sourceFiles = () =>
+  readdirSync(root + 'src', { withFileTypes: true })
+    .flatMap((e) => (e.isDirectory() ? readdirSync(root + 'src/' + e.name).map((f) => `${e.name}/${f}`) : [e.name]))
+    .filter((f) => f.endsWith('.js'));
+
 // where each export is defined, and how it is called (from the code, so the catalog cannot disagree with it)
 export function signatures() {
   const out = {};
-  for (const file of readdirSync(root + 'src').filter((f) => f.endsWith('.js'))) {
+  for (const file of sourceFiles()) {
     const src = readFileSync(root + 'src/' + file, 'utf8');
     for (const m of src.matchAll(/^export function (\w+)\(([^)]*)\)/gm))
       out[m[1]] = { module: `src/${file}`, call: `${m[1]}(${m[2].replace(/\s*=\s*[^,]+/g, '')})` };
@@ -74,7 +80,7 @@ export function buildCatalog() {
   for (const kind of ['established', 'original'])
     for (const [name, e] of Object.entries(A[kind])) out.push(`| ${anchor(name)} | ${kind} | ${e.does} |`);
   const tests = (e, name) => [
-    `**Tests** (\`tests/checks/${S[name].module.slice(4, -3)}.mjs\`)`,
+    `**Tests** (\`tests/checks/${S[name].module.split('/').pop().slice(0, -3)}.mjs\`)`,
     '',
     ...e.tests.map((t) => `- ${t}`),
     '',

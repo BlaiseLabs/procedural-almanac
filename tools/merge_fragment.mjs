@@ -3,7 +3,7 @@
 // entries at once without losing each other's: almanac.json (established and original entries), references.json,
 // src/index.js (each module's export line), CHANGELOG.md ([Unreleased] / Added). A fragment:
 //   { "established": { name: entry }, "original": { name: entry }, "references": [ reference ],
-//     "exports": [ { "module": "raster", "names": ["fbSpan", ...] } ], "changelog": [ "- `raster` (new): ..." ] }
+//     "exports": [ { "module": "pixels/raster", "names": ["fbSpan", ...] } ], "changelog": [ "- `raster` (new): ..." ] }
 // An entry or reference already there is replaced (so a fragment can be merged again after a fix). Run npm run docs and
 // npm test after.
 import { readFileSync, writeFileSync, openSync, closeSync, unlinkSync, statSync } from 'node:fs';
@@ -46,12 +46,12 @@ try {
 
   let idx = readFileSync(ROOT + 'src/index.js', 'utf8');
   for (const { module, names } of frag.exports || []) {
-    const re = new RegExp(`export \\{([^}]*)\\} from '\\./${module}\\.js';`);
+    const re = new RegExp(`export \\{([^}]*)\\} from '\\./(?:\\w+/)?${module.split('/').pop()}\\.js';`);
     const m = idx.match(re);
     if (m) {
       const have = m[1].split(',').map((s) => s.trim()).filter(Boolean),
         all = [...have, ...names.filter((n) => !have.includes(n))];
-      idx = idx.replace(re, `export { ${all.join(', ')} } from './${module}.js';`);
+      idx = idx.replace(re, (line) => `export { ${all.join(', ')} } from ${line.match(/'[^']+'/)[0]};`);
     } else idx = idx.trimEnd() + `\nexport { ${names.join(', ')} } from './${module}.js';\n`;
   }
   writeFileSync(ROOT + 'src/index.js', idx);

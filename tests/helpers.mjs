@@ -42,7 +42,7 @@ export function mulberry32C(state) {
 
 // ---- a real canvas for the drawing checks (@napi-rs/canvas, a dev dependency only), and ways to read its pixels
 import { createCanvas } from '@napi-rs/canvas';
-import { setCanvasMaker } from '../src/canvas.js';
+import { setCanvasMaker } from '../src/canvas/canvas.js';
 setCanvasMaker((w, h) => createCanvas(w, h));
 export const canvas = (w, h, fill) => {
   const c = createCanvas(w, h),

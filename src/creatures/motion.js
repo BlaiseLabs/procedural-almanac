@@ -1,7 +1,7 @@
 // Motion: how things move by themselves. A flock or a school turning together; a walker going from tile to tile; a
 // jelly or a lantern rising in pulses. Each takes things as they are and gives them back a moment later, as new
 // objects (what it is given is left as it was).
-import { clamp } from './numbers.js';
+import { clamp } from '../core/numbers.js';
 
 /**
  * A flock (or a school) a moment later: each one steers toward the flock's centre and its average heading, away from

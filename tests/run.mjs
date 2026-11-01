@@ -6,7 +6,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import * as A from '../src/index.js';
-import { buildCatalog, signatures } from '../tools/catalog.mjs';
+import { buildCatalog, signatures, sourceFiles } from '../tools/catalog.mjs';
 import { buildGallery } from '../tools/gallery.mjs';
 
 const root = new URL('../', import.meta.url).pathname;
@@ -43,7 +43,7 @@ const problems = [],
   bad = (m) => problems.push(m);
 
 // every export has an entry, and every entry is an export
-for (const file of readdirSync(root + 'src').filter((f) => f.endsWith('.js') && f !== 'index.js'))
+for (const file of sourceFiles().filter((f) => f !== 'index.js'))
   for (const name of Object.keys(await import(`../src/${file}`)))
     if (!(name in A)) bad(`src/${file} exports ${name}, but src/index.js does not (so it has escaped the almanac)`);
 for (const name of Object.keys(A)) if (!entries[name]) bad(`${name} is exported but has no entry in almanac.json`);
@@ -114,7 +114,7 @@ for (const c of CHECKS)
 
 // the code cites what its entry cites: each export's doc comment names exactly its entry's references with @see, and
 // every [reference] in a comment exists
-for (const file of readdirSync(root + 'src').filter((f) => f.endsWith('.js'))) {
+for (const file of sourceFiles()) {
   const src = read('src/' + file);
   for (const m of src.matchAll(/\/\*\*((?:(?!\*\/)[^])*)\*\/\s*export (?:function|class|const) (\w+)/g)) {
     const [, doc, name] = m;
@@ -168,7 +168,7 @@ for (const [file, content] of Object.entries(buildGallery())) {
       );
       continue;
     }
-    const want = `tests/checks/${S[name].module.slice(4, -3)}.mjs`;
+    const want = `tests/checks/${S[name].module.split('/').pop().slice(0, -3)}.mjs`;
     for (const c of CHECKS.filter((c) => c.entry === name && c.file !== want))
       bad(`the check "${c.says}" (${name}) is in ${c.file}, not ${want}`);
   }

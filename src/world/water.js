@@ -2,8 +2,8 @@
 // (weed on the bed, sand in the shallows by a beach), broad swells and fine ripples drifting across it, glints that
 // come and go on the crests, foam that laps a beach, and shade at the foot of a bank. Everything that moves is a few
 // tiles of wrapping noise read at offsets that grow with time, so nothing is stepped: a pixel at a time is all of it.
-import { linearCongruential } from './random.js';
-import { noiseTile } from './noise.js';
+import { linearCongruential } from '../core/random.js';
+import { noiseTile } from '../core/noise.js';
 
 const N = 128;
 // a tile of wrapping noise from a seed (its grid of random values from a linear congruential generator)
